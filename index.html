@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vue and CKEditor</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="app-ckeditor">
+				<h1>Vue and CKEditor</h1>
+				<textarea name="app-ckeditor" id="app-ckeditor" v-ckeditor="content" :content="content"></textarea>
+				<h2>Content</h2>
+				<div v-show="content.length > 0">
+					<pre>{{ content }}</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

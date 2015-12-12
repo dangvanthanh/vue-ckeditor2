@@ -1,0 +1,18 @@
+body {
+	background: #333;
+}
+
+.app-ckeditor {
+	margin: 25px 0;
+}
+
+.app-ckeditor h1,
+.app-ckeditor h2 {
+	color: white;
+	margin: 25px 0;
+}
+
+.app-ckeditor pre {
+	background: #cfd1cf;
+	padding: 10px;
+}

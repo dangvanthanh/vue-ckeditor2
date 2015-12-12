@@ -1,0 +1,38 @@
+{
+  "name": "vue-ckeditor",
+  "version": "1.0.0",
+  "description": "Vue and CKEditor",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangvanthanh/vue-ckeditor.git"
+  },
+  "keywords": [
+    "vuejs",
+    "ckeditor"
+  ],
+  "author": "Dang Van Thanh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dangvanthanh/vue-ckeditor/issues"
+  },
+  "homepage": "https://github.com/dangvanthanh/vue-ckeditor#readme",
+  "dependencies": {
+    "vue": "^1.0.11"
+  },
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-runtime": "^6.3.13",
+    "bootstrap": "^4.0.0-alpha.2",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
