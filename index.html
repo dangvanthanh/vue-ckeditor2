@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Vue and CKEditor</title>
+	<title>Vue.js and CKEditor</title>
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="app.css">
 </head>
@@ -10,11 +10,16 @@
 	<div id="app">
 		<div class="container">
 			<div class="app-ckeditor">
-				<h1>Vue and CKEditor</h1>
-				<textarea name="app-ckeditor" id="app-ckeditor" v-ckeditor="content" :content="content"></textarea>
-				<h2>Content</h2>
-				<div v-show="content.length > 0">
-					<pre>{{ content }}</pre>
+				<h1>Vue.js and CKEditor</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<textarea name="app-ckeditor" id="app-ckeditor" v-ckeditor="content" :content="content" debounce="200"></textarea>
+					</div>
+					<div class="col-md-6">
+						<div v-show="isVisbleContent">
+							<pre v-text="content"></pre>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

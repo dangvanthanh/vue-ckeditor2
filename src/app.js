@@ -36,5 +36,10 @@ const app = new Vue({
 	el: '#app',
 	data: {
 		content: ''
+	},
+	computed: {
+		isVisbleContent() {
+			return this.content !== '';
+		}
 	}
 });
