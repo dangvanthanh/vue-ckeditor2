@@ -1,5 +1,8 @@
 # vue-ckeditor
-Vue and CKEditor
+
+> Ckeditor directive using Vue.js
+
+![](screenshot.png)
 
 ## Build
 
@@ -12,3 +15,7 @@ Run application
 ```
 npm run dev
 ```
+
+## License
+
+MIT © [Dang Van Thanh](http://dangthanh.org)

@@ -1,11 +1,12 @@
 {
   "name": "vue-ckeditor",
   "version": "1.0.0",
-  "description": "Vue and CKEditor",
+  "description": "Ckeditor directive using Vue.js",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "webpack --config webpack.config.js"
+    "serve": "live-server --open=public",
+    "watch:js": "rollup -c -w",
+    "dev": "npm-run-all --parallel serve watch:js"
   },
   "repository": {
     "type": "git",
@@ -21,18 +22,16 @@
     "url": "https://github.com/dangvanthanh/vue-ckeditor/issues"
   },
   "homepage": "https://github.com/dangvanthanh/vue-ckeditor#readme",
-  "dependencies": {
-    "vue": "^1.0.11"
-  },
   "devDependencies": {
-    "babel": "^6.3.13",
-    "babel-core": "^6.3.17",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-transform-runtime": "^6.3.13",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-runtime": "^6.3.13",
-    "bootstrap": "^4.0.0-alpha.2",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "live-server": "^1.1.0",
+    "npm-run-all": "^3.1.0",
+    "rollup": "^0.34.13",
+    "rollup-plugin-buble": "^0.13.0",
+    "rollup-plugin-commonjs": "^4.1.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-vue": "^2.1.0"
+  },
+  "dependencies": {
+    "rollup-watch": "^2.5.0"
   }
 }
