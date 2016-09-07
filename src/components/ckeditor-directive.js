@@ -2,7 +2,7 @@ export default {
   deep: true,
   twoWay: true,
   params: ['editorcontent'],
-  setupEditor() {
+  setupEditor () {
     var self = this
     CKEDITOR.replace(self.el.id, {
       toolbar: [
@@ -13,10 +13,10 @@ export default {
       self.set(CKEDITOR.instances[self.el.id].getData())
     })
   },
-  bind() {
+  bind () {
     this.vm.$nextTick(this.setupEditor.bind(this))
   },
-  update(value) {
+  update (value) {
     var self = this
 
     if (!CKEDITOR.instances[self.el.id]) {
@@ -25,7 +25,7 @@ export default {
 
     CKEDITOR.instances[self.el.id].setData(value)
   },
-  unbind() {
+  unbind () {
     CKEDITOR.instances[this.el.id].destroy()
   }
 }

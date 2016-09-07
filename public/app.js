@@ -2,7 +2,7 @@ var Ckeditor$1 = {
   deep: true,
   twoWay: true,
   params: ['editorcontent'],
-  setupEditor: function setupEditor() {
+  setupEditor: function setupEditor () {
     var self = this
     CKEDITOR.replace(self.el.id, {
       toolbar: [
@@ -13,10 +13,10 @@ var Ckeditor$1 = {
       self.set(CKEDITOR.instances[self.el.id].getData())
     })
   },
-  bind: function bind() {
+  bind: function bind () {
     this.vm.$nextTick(this.setupEditor.bind(this))
   },
-  update: function update(value) {
+  update: function update (value) {
     var self = this
 
     if (!CKEDITOR.instances[self.el.id]) {
@@ -25,12 +25,12 @@ var Ckeditor$1 = {
 
     CKEDITOR.instances[self.el.id].setData(value)
   },
-  unbind: function unbind() {
+  unbind: function unbind () {
     CKEDITOR.instances[this.el.id].destroy()
   }
 }
 
-var Ckeditor = { template: "<div class=app><textarea name=ckeditor id=ckeditor v-ckeditor=editorcontent :editorcontent=editorcontent debounce=100></textarea></div>",
+var Ckeditor = { template: "<div class=ckeditor><textarea class=ckeditor__textarea name=ckeditor id=ckeditor v-ckeditor=editorcontent :editorcontent=editorcontent debounce=100></textarea></div>",
 	directives: {
     Ckeditor: Ckeditor$1
   },
@@ -39,7 +39,7 @@ var Ckeditor = { template: "<div class=app><textarea name=ckeditor id=ckeditor v
 			editorcontent: ''
     }
   }
-};
+}
 
 var app = new Vue({
   el: '#app',

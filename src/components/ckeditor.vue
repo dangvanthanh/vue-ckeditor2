@@ -1,6 +1,6 @@
 <template>
-	<div class="app">
-			<textarea name="ckeditor" id="ckeditor" v-ckeditor="editorcontent" :editorcontent="editorcontent" debounce="100"></textarea>
+	<div class="ckeditor">
+			<textarea class="ckeditor__textarea" name="ckeditor" id="ckeditor" v-ckeditor="editorcontent" :editorcontent="editorcontent" debounce="100"></textarea>
 	</div>
 </template>
 
@@ -16,11 +16,11 @@ export default {
 			editorcontent: ''
     }
   }
-};
+}
 </script>
 
 <style>
-.app {
+.ckeditor {
 	max-width: 40em;
 	margin: 20px auto;
 }
