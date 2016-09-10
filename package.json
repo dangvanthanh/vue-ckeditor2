@@ -29,7 +29,7 @@
     "rollup-plugin-buble": "^0.13.0",
     "rollup-plugin-commonjs": "^4.1.0",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-vue": "^2.1.0"
+    "rollup-plugin-vue": "^2.2.2"
   },
   "dependencies": {
     "rollup-watch": "^2.5.0"
