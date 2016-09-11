@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Ckeditor from './ckeditor-directive'
+import Ckeditor from '../directives/ckeditor'
 
 export default {
 	directives: {
