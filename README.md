@@ -4,6 +4,9 @@
 
 ![](screenshot.png)
 
+## Notes
+- Works with Vue 1.0. No support for Vue 2.0, yet.
+
 ## Build
 
 ```
