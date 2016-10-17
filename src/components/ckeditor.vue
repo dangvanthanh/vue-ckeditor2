@@ -1,21 +1,21 @@
 <template>
 	<div class="ckeditor">
-			<textarea class="ckeditor__textarea" name="ckeditor" id="ckeditor" v-ckeditor="editorcontent" :editorcontent="editorcontent" debounce="100"></textarea>
+			<textarea ref="editor" id="editor"></textarea>
 	</div>
 </template>
 
 <script>
-import Ckeditor from '../directives/ckeditor'
-
 export default {
-	directives: {
-    Ckeditor
-  },
-  data () {
-    return {
-			editorcontent: ''
-    }
-  }
+  props: ['value', 'options'],
+	mounted () {
+		let self = this
+
+		CKEDITOR.replace(this.$refs.editor.id, {
+      toolbar: [
+        ['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']
+      ]
+    })
+	}
 }
 </script>
 

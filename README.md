@@ -1,22 +1,20 @@
 # vue-ckeditor
 
-> Ckeditor directive using Vue.js
+> Ckeditor directive using Vue.js for Vue 2.0
 
 ![](screenshot.png)
 
-## Notes
-- Works with Vue 1.0. No support for Vue 2.0, yet.
+## Build setup
 
-## Build
-
-```
+``` bash
+# install dependencies
 npm install
-```
 
-Run application
-
-```
+# server with hot reload at localhost:8080
 npm run dev
+
+# build for production with minification
+npm run build
 ```
 
 ## License

@@ -2,40 +2,35 @@
   "name": "vue-ckeditor",
   "version": "1.0.0",
   "description": "Ckeditor directive using Vue.js",
-  "main": "index.js",
+  "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
+  "private": true,
   "scripts": {
-    "serve": "live-server --open=public",
-    "watch:js": "rollup -c -w",
-    "dev": "npm-run-all --parallel serve watch:js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dangvanthanh/vue-ckeditor.git"
-  },
-  "keywords": [
-    "vuejs",
-    "ckeditor"
-  ],
-  "author": "Dang Van Thanh",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dangvanthanh/vue-ckeditor/issues"
-  },
-  "homepage": "https://github.com/dangvanthanh/vue-ckeditor#readme",
-  "devDependencies": {
-    "live-server": "^1.1.0",
-    "npm-run-all": "^3.1.0",
-    "rollup": "^0.34.13",
-    "rollup-plugin-buble": "^0.13.0",
-    "rollup-plugin-commonjs": "^4.1.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-uglify": "^1.0.1",
-    "rollup-plugin-vue": "^2.2.2",
-    "uglify-js": "^2.7.3",
-    "vue": "^1.0.26"
+    "build": "run-s build:**",
+    "build:js": "cross-env NODE_ENV=production rollup -c",
+    "build:autoprefixer": "postcss --use autoprefixer -o public/assets/css/app.css public/assets/css/app.css",
+    "build:cssnano": "cssnano public/assets/css/app.css public/assets/css/app.css",
+    "dev": "cross-env NODE_ENV=development rollup -cw"
   },
   "dependencies": {
-    "rollup-watch": "^2.5.0"
+    "vue": "^2.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.1",
+    "cross-env": "^3.1.2",
+    "cssnano-cli": "^1.0.4",
+    "npm-run-all": "^3.1.1",
+    "postcss-cli": "^2.6.0",
+    "rollup": "^0.36.1",
+    "rollup-plugin-alias": "^1.2.0",
+    "rollup-plugin-buble": "^0.14.0",
+    "rollup-plugin-commonjs": "^5.0.4",
+    "rollup-plugin-livereload": "^0.1.0",
+    "rollup-plugin-node-globals": "^1.0.9",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-serve": "^0.1.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-plugin-vue": "^2.2.8",
+    "rollup-watch": "^2.5.0",
+    "uglify-js": "^2.7.3"
   }
 }
