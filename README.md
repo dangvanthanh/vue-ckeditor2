@@ -5,7 +5,7 @@
 ![](screenshot.png)
 
 ## Notes
-- Works with Vue 1.0. No support for Vue 2.0, yet.
+- Works with Vue.js 1x. Support for [Ckeditor Vue 2x](https://github.com/dangvanthanh/vue-ckeditor).
 
 ## Build
 
