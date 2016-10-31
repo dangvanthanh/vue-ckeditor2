@@ -7527,21 +7527,40 @@ return Vue$3;
 })));
 });
 
-var Ckeditor = {render: function(){with(this){return _h('div',{staticClass:"ckeditor"},[_h('textarea',{ref:"editor",attrs:{"id":"editor"}})])}},staticRenderFns: [],
-  props: ['value', 'options'],
-	mounted: function mounted () {
-		var self = this;
+var Ckeditor = {render: function(){with(this){return _h('div',{staticClass:"ckeditor"},[_h('textarea',{ref:"editor",attrs:{"id":"editor","placeholder":"Post body"},domProps:{"value":value}})])}},staticRenderFns: [],
+  props: {
+		value: String
+	},
+  mounted: function mounted () {
+    var this$1 = this;
 
-		CKEDITOR.replace(this.$refs.editor.id, {
-      toolbar: [
-        ['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']
-      ]
+    CKEDITOR.replace(this.$refs.editor.id, {
+      toolbar: [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
     });
-	}
+
+		CKEDITOR.instances.editor.setData(this.value);
+		CKEDITOR.instances.editor.on('change', function () {
+			this$1.$emit('input', CKEDITOR.instances.editor.getData());
+		});
+  },
+  destroyed: function destroyed () {
+		if (CKEDITOR.instances.editor) {
+			CKEDITOR.instances.editor.destroy();
+		}
+  }
+};
+
+var App = {render: function(){with(this){return _h('div',{staticClass:"app"},[_h('ckeditor',{directives:[{name:"model",rawName:"v-model",value:(content),expression:"content"}],domProps:{"value":(content)},on:{"input":function($event){content=$event;}}}),_m(0),_h('div',{staticClass:"raw",domProps:{"innerHTML":_s(content)}})])}},staticRenderFns: [function(){with(this){return _h('h2',{staticClass:"heading"},["Raw Html"])}}],
+  data: function data () {
+    return {
+      content: ''
+    }
+  },
+  components: { Ckeditor: Ckeditor }
 };
 
 var app = new vue$1({
   el: '#app',
-  render: function (h) { return h(Ckeditor); }
+  render: function (h) { return h(App); }
 });
 //# sourceMappingURL=app.js.map

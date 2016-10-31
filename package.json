@@ -1,7 +1,7 @@
 {
   "name": "vue-ckeditor",
   "version": "1.0.0",
-  "description": "Ckeditor directive using Vue.js",
+  "description": "Ckeditor using for Vue.js 2",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "private": true,
   "scripts": {
