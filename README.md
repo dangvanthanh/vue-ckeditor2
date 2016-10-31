@@ -32,7 +32,7 @@ npm run build
 
 ## Team
 
-[![Dang Van Thanh](https://avatars3.githubusercontent.com/u/2674850?v=3&s=466)](https://github.com/dangvanthanh) | [![Eduárd Moldován](https://avatars3.githubusercontent.com/u/1571258?v=3&s=466)](https://github.com/edimoldovan)
+[![Dang Van Thanh](https://avatars3.githubusercontent.com/u/2674850?v=3&s=100)](https://github.com/dangvanthanh) | [![Eduárd Moldován](https://avatars3.githubusercontent.com/u/1571258?v=3&s=100)](https://github.com/edimoldovan)
 ---|---
 [Dang Van Thanh](https://github.com/dangvanthanh) | [Eduárd Moldován](https://github.com/edimoldovan)
 
