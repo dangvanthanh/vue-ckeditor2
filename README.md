@@ -4,6 +4,10 @@
 
 ![](screenshot.png)
 
+## Notes
+
+- If you use Vue.js 1x please reference from [Ckeditor Vue 1x](https://github.com/dangvanthanh/vue-ckeditor/tree/1.0)
+
 ## Build setup
 
 ### [yarn](https://yarnpkg.com) - recommend
