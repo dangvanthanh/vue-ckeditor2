@@ -7,11 +7,17 @@
 <script>
 export default {
   props: {
-		value: String
+		value: {
+      type: String
+    },
+    toolbar: {
+      type: Array,
+      default: () => [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
+    }
 	},
   mounted () {
     CKEDITOR.replace(this.$refs.editor.id, {
-      toolbar: [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
+      toolbar: this.toolbar
     })
 
 		CKEDITOR.instances.editor.setData(this.value)

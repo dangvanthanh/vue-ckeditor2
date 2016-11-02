@@ -7529,13 +7529,19 @@ return Vue$3;
 
 var Ckeditor = {render: function(){with(this){return _h('div',{staticClass:"ckeditor"},[_h('textarea',{ref:"editor",attrs:{"id":"editor","placeholder":"Post body"},domProps:{"value":value}})])}},staticRenderFns: [],
   props: {
-		value: String
+		value: {
+      type: String
+    },
+    toolbar: {
+      type: Array,
+      default: function () { return [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]; }
+    }
 	},
   mounted: function mounted () {
     var this$1 = this;
 
     CKEDITOR.replace(this.$refs.editor.id, {
-      toolbar: [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
+      toolbar: this.toolbar
     });
 
 		CKEDITOR.instances.editor.setData(this.value);
@@ -7550,7 +7556,7 @@ var Ckeditor = {render: function(){with(this){return _h('div',{staticClass:"cked
   }
 };
 
-var App = {render: function(){with(this){return _h('div',{staticClass:"app"},[_h('ckeditor',{directives:[{name:"model",rawName:"v-model",value:(content),expression:"content"}],domProps:{"value":(content)},on:{"input":function($event){content=$event;}}}),_m(0),_h('div',{staticClass:"raw",domProps:{"innerHTML":_s(content)}})])}},staticRenderFns: [function(){with(this){return _h('h2',{staticClass:"heading"},["Raw Html"])}}],
+var App = {render: function(){with(this){return _h('div',{staticClass:"app"},[_h('ckeditor',{directives:[{name:"model",rawName:"v-model",value:(content),expression:"content"}],attrs:{"toolbar":[['Format']]},domProps:{"value":(content)},on:{"input":function($event){content=$event;}}}),_m(0),_h('div',{staticClass:"raw",domProps:{"innerHTML":_s(content)}})])}},staticRenderFns: [function(){with(this){return _h('h2',{staticClass:"heading"},["Raw Html"])}}],
   data: function data () {
     return {
       content: ''

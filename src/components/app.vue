@@ -1,6 +1,8 @@
 <template>
   <div class="app">
-    <ckeditor v-model="content"></ckeditor>
+    <ckeditor v-model="content"
+              :toolbar="[['Format']]">
+    </ckeditor>
     <h2 class="heading">Raw Html</h2>
     <div class="raw" v-html="content"></div>
   </div>
