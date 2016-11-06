@@ -1,18 +1,1 @@
-
-.app {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.heading {
-  margin-top: 25px;
-}
-
-.raw {
-  margin: 25px 0;
-}
-
-.ckeditor {
-	width: 100%;
-	clear: both;
-}
+.app{max-width:600px;margin:0 auto}.heading{margin-top:25px}.raw{margin:25px 0}.ckeditor{width:100%;clear:both}

@@ -8,6 +8,28 @@
 
 - If you use Vue.js 1x please reference from [Ckeditor Vue 1x](https://github.com/dangvanthanh/vue-ckeditor/tree/1.0)
 
+## Usage
+
+### .vue files
+```
+<template>
+  <div class="app">
+    <ckeditor v-model="content"
+              :height="'300px'"
+              :toolbar="[['Format']]">
+    </ckeditor>
+  </div>
+</template>
+
+<script>
+import Ckeditor from './ckeditor.vue'
+
+export default {
+  components: { Ckeditor }
+}
+</script>
+```
+
 ## Build setup
 
 ### [yarn](https://yarnpkg.com) - recommend

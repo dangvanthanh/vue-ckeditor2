@@ -31,21 +31,25 @@
 			}
 		},
 		mounted () {
-			CKEDITOR.replace( this.id, {
+      const ckeditorId = this.id
+
+			CKEDITOR.replace(ckeditorId, {
 				toolbar: this.toolbar,
 				language: this.language,
 				width: this.width,
 				height: this.height
 			})
 
-			CKEDITOR.instances[this.id].setData(this.value)
-			CKEDITOR.instances[this.id].on('change', () => {
+			CKEDITOR.instances[ckeditorId].setData(this.value)
+			CKEDITOR.instances[ckeditorId].on('change', () => {
 				this.$emit('input', CKEDITOR.instances[this.id].getData())
 			})
 		},
 		destroyed () {
-			if (CKEDITOR.instances[this.id]) {
-				CKEDITOR.instances[this.id].destroy()
+      const ckeditorId = this.id
+
+			if (CKEDITOR.instances[ckeditorId]) {
+				CKEDITOR.instances[ckeditorId].destroy()
 			}
 		}
 	}
