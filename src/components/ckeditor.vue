@@ -48,7 +48,7 @@
 			CKEDITOR.instances[ckeditorId].setData(this.value)
 			CKEDITOR.instances[ckeditorId].on('change', () => {
 				let ckeditorData=CKEDITOR.instances[ckeditorId].getData()
-				if(ckeditorData != this.value) this.$emit('input', CKEDITOR.instances[ckeditorId].getData())
+				if(ckeditorData != this.value) this.$emit('input', ckeditorData)
 			})
 		},
 		destroyed () {
