@@ -25,6 +25,11 @@
 import Ckeditor from './ckeditor.vue'
 
 export default {
+  data () {
+    return {
+      content: ''
+    }
+  },
   components: { Ckeditor }
 }
 </script>
