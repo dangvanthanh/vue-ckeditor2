@@ -11,7 +11,7 @@
 ## Usage
 
 ### .vue files
-```
+```html
 <template>
   <div class="app">
     <ckeditor v-model="content"
