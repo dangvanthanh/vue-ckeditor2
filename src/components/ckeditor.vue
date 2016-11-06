@@ -1,38 +1,57 @@
 <template>
 	<div class="ckeditor">
-			<textarea ref="editor" id="editor" placeholder="Post body" :value="value"></textarea>
+		<textarea :id="id" :placeholder="placeholder"  :value="value" :cols="cols" :row="row" ></textarea>
 	</div>
 </template>
-
 <script>
-export default {
-  props: {
-		value: {
-      type: String
-    },
-    toolbar: {
-      type: Array,
-      default: () => [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
-    }
-	},
-  mounted () {
-    CKEDITOR.replace(this.$refs.editor.id, {
-      toolbar: this.toolbar
-    })
+	export default{
+		props: {
+			value: {
+				type: String
+			},
+			id: {
+				type: String,
+				default: 'editor'
+			},
+			cols: {
+				type: Number,
+				default: 80
+			},
+			row: {
+				type: Number,
+				default: 10,
+			},
+			placeholder: {
+				type: String,
+				default: 'Post body'
+			},
+			toolbar: {
+				type: Array,
+				default: () => [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
+			},
+			language: {
+				type: String,
+				default: 'en'
+			}
+		},
+		mounted () {
+			CKEDITOR.replace( this.id, {
+				toolbar: this.toolbar,
+				language: this.language
+			})
 
-		CKEDITOR.instances.editor.setData(this.value)
-		CKEDITOR.instances.editor.on('change', () => {
-			this.$emit('input', CKEDITOR.instances.editor.getData())
-		})
-  },
-  destroyed () {
-		if (CKEDITOR.instances.editor) {
-			CKEDITOR.instances.editor.destroy()
+			CKEDITOR.instances[this.id].setData(this.value)
+			CKEDITOR.instances[this.id].on('change', () => {
+				this.$emit('input', CKEDITOR.instances[this.id].getData())
+			})
+		},
+		destroyed () {
+			if (CKEDITOR.instances[this.id]) {
+				CKEDITOR.instances[this.id].destroy()
+			}
 		}
-  }
-}
+	}
 </script>
-
 <style>
 .ckeditor {
 	width: 100%;
