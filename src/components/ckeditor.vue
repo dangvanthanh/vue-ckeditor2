@@ -1,9 +1,9 @@
 <template>
 	<div class="ckeditor">
-		<textarea :id="id" :placeholder="placeholder" :value="value" :cols="cols" :row="row"></textarea>
+		<textarea :id="id" :value="value"></textarea>
 	</div>
 </template>
-<script>
+<script type="text/babel">
 	export default{
 		props: {
 			value: {
@@ -13,17 +13,13 @@
 				type: String,
 				default: 'editor'
 			},
-			cols: {
-				type: Number,
-				default: 80
-			},
-			row: {
-				type: Number,
-				default: 10,
-			},
-			placeholder: {
+			width: {
 				type: String,
-				default: 'Post body'
+				default: ''
+			},
+			height: {
+				type: String,
+				default: '200px',
 			},
 			toolbar: {
 				type: Array,
@@ -37,7 +33,9 @@
 		mounted () {
 			CKEDITOR.replace( this.id, {
 				toolbar: this.toolbar,
-				language: this.language
+				language: this.language,
+				width: this.width,
+				height: this.height
 			})
 
 			CKEDITOR.instances[this.id].setData(this.value)
