@@ -30,6 +30,11 @@
 				default: 'en'
 			}
 		},
+		beforeUpdate () {
+	  const ckeditorId = this.id
+
+			if(this.value != CKEDITOR.instances[ckeditorId].getData()) CKEDITOR.instances[ckeditorId].setData(this.value)
+		},
 		mounted () {
       const ckeditorId = this.id
 
@@ -42,7 +47,8 @@
 
 			CKEDITOR.instances[ckeditorId].setData(this.value)
 			CKEDITOR.instances[ckeditorId].on('change', () => {
-				this.$emit('input', CKEDITOR.instances[this.id].getData())
+				let ckeditorData=CKEDITOR.instances[ckeditorId].getData()
+				if(ckeditorData != this.value) this.$emit('input', CKEDITOR.instances[ckeditorId].getData())
 			})
 		},
 		destroyed () {
