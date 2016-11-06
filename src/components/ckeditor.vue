@@ -1,6 +1,6 @@
 <template>
 	<div class="ckeditor">
-		<textarea :id="id" :placeholder="placeholder"  :value="value" :cols="cols" :row="row" ></textarea>
+		<textarea :id="id" :placeholder="placeholder" :value="value" :cols="cols" :row="row"></textarea>
 	</div>
 </template>
 <script>
