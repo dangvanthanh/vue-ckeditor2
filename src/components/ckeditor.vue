@@ -13,13 +13,9 @@
 				type: String,
 				default: 'editor'
 			},
-			width: {
-				type: String,
-				default: ''
-			},
 			height: {
-				type: String,
-				default: '200px',
+				type: Number,
+				default: 200,
 			},
 			toolbar: {
 				type: Array,
@@ -31,9 +27,11 @@
 			}
 		},
 		beforeUpdate () {
-	  const ckeditorId = this.id
+	     const ckeditorId = this.id
 
-			if(this.value != CKEDITOR.instances[ckeditorId].getData()) CKEDITOR.instances[ckeditorId].setData(this.value)
+       if (this.value != CKEDITOR.instances[ckeditorId].getData()) {
+         CKEDITOR.instances[ckeditorId].setData(this.value)
+       }
 		},
 		mounted () {
       const ckeditorId = this.id
@@ -41,14 +39,15 @@
 			CKEDITOR.replace(ckeditorId, {
 				toolbar: this.toolbar,
 				language: this.language,
-				width: this.width,
 				height: this.height
 			})
 
 			CKEDITOR.instances[ckeditorId].setData(this.value)
 			CKEDITOR.instances[ckeditorId].on('change', () => {
-				let ckeditorData=CKEDITOR.instances[ckeditorId].getData()
-				if(ckeditorData != this.value) this.$emit('input', ckeditorData)
+				let ckeditorData = CKEDITOR.instances[ckeditorId].getData()
+				if (ckeditorData !== this.value) {
+          this.$emit('input', ckeditorData)
+        }
 			})
 		},
 		destroyed () {

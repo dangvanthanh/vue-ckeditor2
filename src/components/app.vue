@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <ckeditor v-model="content"
-              :height="'300px'"
+              :height="300"
               :toolbar="[['Format']]">
     </ckeditor>
     <h2 class="heading">Raw Html</h2>
