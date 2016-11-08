@@ -16,7 +16,7 @@
 ```html
 <template>
   <div class="app">
-    <ckeditor v-model="content" :height="300" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="content" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
   </div>
 </template>
 
@@ -38,8 +38,8 @@ export default {
 ```html
 <template>
   <div class="app">
-    <ckeditor v-model="contentA" :id="'editorA'" :height="300" :toolbar="[['Format']]"></ckeditor>
-    <ckeditor v-model="contentB" :id="'editorB'" :height="300" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="contentA" :id="'editorA'" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="contentB" :id="'editorB'" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
   </div>
 </template>
 
