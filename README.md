@@ -11,13 +11,12 @@
 ## Usage
 
 ### .vue files
+
+#### Single ckeditor
 ```html
 <template>
   <div class="app">
-    <ckeditor v-model="content"
-              :height="300"
-              :toolbar="[['Format']]">
-    </ckeditor>
+    <ckeditor v-model="content" :height="300" :toolbar="[['Format']]"></ckeditor>
   </div>
 </template>
 
@@ -28,6 +27,30 @@ export default {
   data () {
     return {
       content: ''
+    }
+  },
+  components: { Ckeditor }
+}
+</script>
+```
+
+#### Multi ckeditor
+```html
+<template>
+  <div class="app">
+    <ckeditor v-model="contentA" :id="'editorA'" :height="300" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="contentB" :id="'editorB'" :height="300" :toolbar="[['Format']]"></ckeditor>
+  </div>
+</template>
+
+<script>
+import Ckeditor from './ckeditor.vue'
+
+export default {
+  data () {
+    return {
+      contentA: '',
+      contentB: ''
     }
   },
   components: { Ckeditor }
