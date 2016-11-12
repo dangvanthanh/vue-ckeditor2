@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <ckeditor v-model="content"
+              :id="editor1"
               :height="'300px'"
               :toolbar="[['Format']]">
     </ckeditor>

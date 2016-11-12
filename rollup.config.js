@@ -35,12 +35,15 @@ const config = {
   plugins: plugins
 }
 
-if (process.env.NODE_ENV === 'production') {
+const isProduction = process.env.NODE_ENV === `production`
+const isDevelopment = process.env.NODE_ENV === `development`
+
+if (isProduction) {
   config.sourceMap = false
   config.plugins.push(uglify({}, minify))
 }
 
-if (process.env.NODE_ENV === 'development') {
+if (isDevelopment) {
   config.plugins.push(livereload())
   config.plugins.push(serve({
     contentBase: './public/',
