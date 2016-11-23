@@ -11,7 +11,7 @@ import serve from 'rollup-plugin-serve'
 
 const plugins = [
   alias({
-    vue: 'node_modules/vue/dist/vue.js'
+    vue: 'node_modules/vue/dist/vue.common.js'
   }),
   vue({
     css: './public/assets/css/app.css'
