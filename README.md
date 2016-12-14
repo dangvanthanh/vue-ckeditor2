@@ -38,8 +38,8 @@ export default {
 ```html
 <template>
   <div class="app">
-    <ckeditor v-model="contentA" :id="'editorA'" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
-    <ckeditor v-model="contentB" :id="'editorB'" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="contentA" :id="editorA" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="contentB" :id="editorB" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
   </div>
 </template>
 
@@ -49,7 +49,7 @@ import Ckeditor from './ckeditor.vue'
 export default {
   data () {
     return {
-      editorA: 'editor-b',
+      editorA: 'editor-a',
       contentA: '',
       editorB: 'editor-b'
       contentB: ''
