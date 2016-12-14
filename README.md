@@ -49,7 +49,9 @@ import Ckeditor from './ckeditor.vue'
 export default {
   data () {
     return {
+      editorA: 'editor-b',
       contentA: '',
+      editorB: 'editor-b'
       contentB: ''
     }
   },
