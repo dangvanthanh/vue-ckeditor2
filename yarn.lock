@@ -215,8 +215,8 @@ browserslist@~1.4.0:
     caniuse-db "^1.0.30000539"
 
 buble@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/buble/-/buble-0.15.0.tgz#787cf0827cd877e18a6d47dbbf700b2e3138d934"
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/buble/-/buble-0.15.1.tgz#89fa32b8956d772c3cce2a27684245e64d8e930d"
   dependencies:
     acorn "^3.3.0"
     acorn-jsx "^3.0.1"
@@ -496,8 +496,8 @@ de-indent@^1.0.2:
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
 
 debug@^2.2.0:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.4.1.tgz#ef2532d2753d282045c13c82ce47a09e56b91d53"
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.4.4.tgz#c04d17a654e9202464803f096153f70a6f31f4be"
   dependencies:
     ms "0.7.2"
 
@@ -578,6 +578,10 @@ esprima@^2.6.0:
 estree-walker@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
+
+estree-walker@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.3.0.tgz#f67ca8f57b9ed66d886af816c099c779b315d4db"
 
 event-stream@~3.3.0:
   version "3.3.4"
@@ -812,7 +816,7 @@ has-ansi@^2.0.0:
 
 has-flag@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
+  resolved "http://registry.npmjs.org/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
 
 has-unicode@^2.0.0:
   version "2.0.1"
@@ -1393,8 +1397,8 @@ parse-json@^2.2.0:
     error-ex "^1.2.0"
 
 parse5@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.0.tgz#2bf6709e7f4b80040c1373abafe4beb3ad4f40fe"
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.1.tgz#f59ceae1e0c74d0b1f6e51ca317c054cab484f79"
   dependencies:
     "@types/node" "^6.0.46"
 
@@ -1870,13 +1874,13 @@ rollup-plugin-buble@^0.15.0:
     buble "^0.15.0"
     rollup-pluginutils "^1.5.0"
 
-rollup-plugin-commonjs@^5.0.4:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-5.0.5.tgz#14f93d92cb70e6c31142914b83cd3e904be30c1f"
+rollup-plugin-commonjs@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-6.0.0.tgz#af61d38ec6bc81c6a2c3b5199f520eed9a2368db"
   dependencies:
     acorn "^4.0.1"
-    estree-walker "^0.2.1"
-    magic-string "^0.16.0"
+    estree-walker "^0.3.0"
+    magic-string "^0.19.0"
     resolve "^1.1.7"
     rollup-pluginutils "^1.5.1"
 
@@ -1918,9 +1922,9 @@ rollup-plugin-uglify@^1.0.1:
   dependencies:
     uglify-js "^2.6.1"
 
-rollup-plugin-vue@^2.2.13:
-  version "2.2.13"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-2.2.13.tgz#bf69f70577bb5e9635c0c5e5178291335c668fe7"
+rollup-plugin-vue@^2.2.14:
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-2.2.14.tgz#96a8668d0ade10d9803c67c46dc8a63f6265db17"
   dependencies:
     de-indent "^1.0.2"
     debug "^2.2.0"
