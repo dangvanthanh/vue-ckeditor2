@@ -12,25 +12,25 @@
     "dev": "cross-env NODE_ENV=development rollup -cw"
   },
   "dependencies": {
-    "vue": "^2.1.6"
+    "vue": "^2.1.8"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.4",
+    "autoprefixer": "^6.6.0",
     "cross-env": "^3.1.2",
     "cssnano-cli": "^1.0.4",
-    "npm-run-all": "^3.1.2",
+    "npm-run-all": "^4.0.0",
     "postcss-cli": "^2.6.0",
-    "rollup": "^0.37.0",
+    "rollup": "^0.39.2",
     "rollup-plugin-alias": "^1.2.0",
     "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-commonjs": "^6.0.0",
+    "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-livereload": "^0.4.0",
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-serve": "^0.1.0",
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-plugin-vue": "^2.2.14",
-    "rollup-watch": "^2.5.0",
+    "rollup-watch": "^3.1.0",
     "uglify-js": "^2.7.5"
   }
 }
