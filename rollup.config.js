@@ -32,7 +32,8 @@ const config = {
   entry: './src/app.js',
   dest: './public/assets/js/app.js',
   sourceMap: true,
-  plugins: plugins
+  plugins: plugins,
+  format: 'es'
 }
 
 const isProduction = process.env.NODE_ENV === `production`

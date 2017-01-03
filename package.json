@@ -15,8 +15,8 @@
     "vue": "^2.1.8"
   },
   "devDependencies": {
-    "autoprefixer": "^6.6.0",
-    "cross-env": "^3.1.2",
+    "autoprefixer": "^6.6.1",
+    "cross-env": "^3.1.4",
     "cssnano-cli": "^1.0.4",
     "npm-run-all": "^4.0.0",
     "postcss-cli": "^2.6.0",
