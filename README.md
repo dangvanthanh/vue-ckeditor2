@@ -12,10 +12,10 @@
 
 ```
 # yarn (recommend)
-$ yarn install vue-ckeditor
+$ yarn install vue-ckeditor2
 
 # npm
-$ npm install vue-ckeditor --save
+$ npm install vue-ckeditor2 --save
 ```
 
 ## Usage
