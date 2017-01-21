@@ -6,12 +6,18 @@
   "peerDependencies": {
     "vue": ">= 2"
   },
-  "repository": "vue-ckeditor",
+  "repository": {
+    "type": "git",
+    "url": "vue-ckeditor"
+  },
   "keywords": [
     "vue",
     "ckeditor",
     "vue-ckeditor"
   ],
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
