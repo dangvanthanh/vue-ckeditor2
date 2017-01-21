@@ -1,5 +1,5 @@
 {
-  "name": "vue-ckeditor",
+  "name": "vue-ckeditor2",
   "version": "1.0.0",
   "description": "Ckeditor using for Vue.js 2",
   "main": "src/index.js",

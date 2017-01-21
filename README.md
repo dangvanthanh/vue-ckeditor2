@@ -31,7 +31,7 @@ $ npm install vue-ckeditor --save
 </template>
 
 <script>
-import Ckeditor from 'vue-ckeditor'
+import Ckeditor from 'vue-ckeditor2'
 
 export default {
   data () {
@@ -54,7 +54,7 @@ export default {
 </template>
 
 <script>
-import Ckeditor from 'vue-ckeditor'
+import Ckeditor from 'vue-ckeditor2'
 
 export default {
   data () {
