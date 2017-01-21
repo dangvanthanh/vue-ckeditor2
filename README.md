@@ -8,6 +8,16 @@
 
 - If you use Vue.js 1x please reference from [Ckeditor Vue 1x](https://github.com/dangvanthanh/vue-ckeditor/tree/1.0)
 
+## Install
+
+```
+# yarn (recommend)
+$ yarn install vue-ckeditor
+
+# npm
+$ npm install vue-ckeditor --save
+```
+
 ## Usage
 
 ### .vue files
@@ -21,7 +31,7 @@
 </template>
 
 <script>
-import Ckeditor from './ckeditor.vue'
+import Ckeditor from 'vue-ckeditor'
 
 export default {
   data () {
@@ -44,7 +54,7 @@ export default {
 </template>
 
 <script>
-import Ckeditor from './ckeditor.vue'
+import Ckeditor from 'vue-ckeditor'
 
 export default {
   data () {
@@ -60,31 +70,9 @@ export default {
 </script>
 ```
 
-## Build setup
+## Build Setup
 
-### [yarn](https://yarnpkg.com) - recommend
-``` bash
-# Install dependencies
-yarn install
-
-# Server with hot reload at localhost:8080
-yarn run dev
-
-# Build for production with minification
-yarn run build
-```
-
-### [npm](https://www.npmjs.com/)
-``` bash
-# Install dependencies
-npm install
-
-# Server with hot reload at localhost:8080
-npm run dev
-
-# Build for production with minification
-npm run build
-```
+You can use [vue-cli](https://github.com/vuejs/vue-cli) with [vue-rollup-boilerplate](https://github.com/dangvanthanh/vue-rollup-boilerplate).
 
 ## Team
 

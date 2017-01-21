@@ -2,35 +2,16 @@
   "name": "vue-ckeditor",
   "version": "1.0.0",
   "description": "Ckeditor using for Vue.js 2",
+  "main": "src/index.js",
+  "peerDependencies": {
+    "vue": ">= 2",
+  },
+  "repository": "vue-ckeditor",
+  "keywords": [
+    "vue",
+    "ckeditor",
+    "vue-ckeditor"
+  ],
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
-  "private": true,
-  "scripts": {
-    "build": "run-s build:**",
-    "build:js": "cross-env NODE_ENV=production rollup -c",
-    "build:autoprefixer": "postcss --use autoprefixer -o public/assets/css/app.css public/assets/css/app.css",
-    "build:cssnano": "cssnano public/assets/css/app.css public/assets/css/app.css",
-    "dev": "cross-env NODE_ENV=development rollup -cw"
-  },
-  "dependencies": {
-    "vue": "^2.1.9"
-  },
-  "devDependencies": {
-    "autoprefixer": "^6.6.1",
-    "cross-env": "^3.1.4",
-    "cssnano-cli": "^1.0.4",
-    "npm-run-all": "^4.0.1",
-    "postcss-cli": "^2.6.0",
-    "rollup": "^0.41.4",
-    "rollup-plugin-alias": "^1.2.0",
-    "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-livereload": "^0.4.0",
-    "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-serve": "^0.1.0",
-    "rollup-plugin-uglify": "^1.0.1",
-    "rollup-plugin-vue": "^2.2.15",
-    "rollup-watch": "^3.2.2",
-    "uglify-js": "^2.7.5"
-  }
+  "license": "MIT"
 }
