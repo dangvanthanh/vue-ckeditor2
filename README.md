@@ -2,7 +2,7 @@
 
 > Ckeditor using for Vue.js 2
 
-![](screenshot.png)
+![](https://raw.githubusercontent.com/dangvanthanh/vue-ckeditor2/master/screenshot.png)
 
 ## Notes
 
@@ -12,7 +12,7 @@
 
 ```
 # yarn (recommend)
-$ yarn install vue-ckeditor2
+$ yarn add vue-ckeditor2
 
 # npm
 $ npm install vue-ckeditor2 --save
@@ -72,7 +72,7 @@ export default {
 
 ## Build Setup
 
-You can use [vue-cli](https://github.com/vuejs/vue-cli) with [vue-rollup-boilerplate](https://github.com/dangvanthanh/vue-rollup-boilerplate).
+You can use [vue-cli](https://github.com/vuejs/vue-cli) with [vue-rollup-boilerplate templates](https://github.com/dangvanthanh/vue-rollup-boilerplate) or [other vue templates](https://github.com/vuejs-templates)
 
 ## Team
 
