@@ -12,7 +12,8 @@ export default {
     },
     id: {
       type: String,
-      default: 'editor'
+      default: 'editor',
+      required: true
     },
     height: {
       type: String,

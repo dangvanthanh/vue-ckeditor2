@@ -8,6 +8,11 @@
 
 - If you use Vue.js 1x please reference from [Ckeditor Vue 1x](https://github.com/dangvanthanh/vue-ckeditor/tree/1.0)
 
+## Requirements
+
+- [Ckeditor](http://ckeditor.com/) >= 4
+- [Vue.js](http://vuejs.org/) >= 2
+
 ## Install
 
 ```
@@ -69,6 +74,16 @@ export default {
 }
 </script>
 ```
+
+## Props
+
+| Name           | Type     | Description                              |
+| -------------- | -------- | ---------------------------------------- |
+| `id`           | `String` | Id of instance ckedior. **Required. Default: editor** |
+| `height`       | `String` | Height of ckeditor. **Default: 200px**   |
+| `toolbar`      | `Array`  | Toolbar configuration of creditor. **Default: [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]** |
+| `language`     | `String` | Language of creditor. **Default: en**    |
+| `extraplugins` | `String` | List of additional plugins to be loaded. |
 
 ## Build Setup
 
