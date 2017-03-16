@@ -79,7 +79,7 @@ export default {
 
 | Name           | Type     | Description                              |
 | -------------- | -------- | ---------------------------------------- |
-| `id`           | `String` | Id of instance ckedior. **Required. Default: editor** |
+| `id`           | `String` | Id of instance ckedior. **Default: Default: editor-1 |
 | `height`       | `String` | Height of ckeditor. **Default: 200px**   |
 | `toolbar`      | `Array`  | Toolbar configuration of creditor. **Default: [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]** |
 | `language`     | `String` | Language of creditor. **Default: en**    |
@@ -91,9 +91,9 @@ You can use [vue-cli](https://github.com/vuejs/vue-cli) with [vue-rollup-boilerp
 
 ## Team
 
-[![Dang Van Thanh](https://avatars3.githubusercontent.com/u/2674850?v=3&s=100)](https://github.com/dangvanthanh) | [![Eduárd Moldován](https://avatars3.githubusercontent.com/u/1571258?v=3&s=100)](https://github.com/edimoldovan) | [![Dominique FERET](https://avatars1.githubusercontent.com/u/7206135?v=3&s=100)](https://github.com/DominiqueFERET)
----|---|---
-[Dang Van Thanh](https://github.com/dangvanthanh) | [Eduárd Moldován](https://github.com/edimoldovan) | [Dominique FERET](https://github.com/DominiqueFERET)
+[![Dang Van Thanh](https://avatars3.githubusercontent.com/u/2674850?v=3&s=80)](https://github.com/dangvanthanh) | [![Eduárd Moldován](https://avatars3.githubusercontent.com/u/1571258?v=3&s=80)](https://github.com/edimoldovan) | [![Dominique FERET](https://avatars1.githubusercontent.com/u/7206135?v=3&s=80)](https://github.com/DominiqueFERET) | [![comfuture](hhttps://avatars0.githubusercontent.com/u/151300?v=3&s=80)](https://github.com/comfuture)
+---|---|--- | ---
+[Dang Van Thanh](https://github.com/dangvanthanh) | [Eduárd Moldován](https://github.com/edimoldovan) | [Dominique FERET](https://github.com/DominiqueFERET) | [comfuture](https://github.com/comfuture)
 
 ## License
 

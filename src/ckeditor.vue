@@ -5,7 +5,8 @@
 </template>
 
 <script>
-var inc = 0
+let inc = 0
+
 export default {
   props: {
     value: {
@@ -49,6 +50,7 @@ export default {
       height: this.height,
       extraPlugins: this.extraplugins
     }
+
     CKEDITOR.replace(this.id, config)
 
     this.instance.on('change', () => {
@@ -73,4 +75,3 @@ export default {
   clear: both;
 }
 </style>
-
