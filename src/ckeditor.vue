@@ -1,10 +1,11 @@
 <template>
-	<div class="ckeditor">
-		<textarea :id="id" :value="value"></textarea>
-	</div>
+    <div class="ckeditor">
+        <textarea :id="id" :value="value"></textarea>
+    </div>
 </template>
 
 <script>
+var inc = 0
 export default {
   props: {
     value: {
@@ -12,16 +13,15 @@ export default {
     },
     id: {
       type: String,
-      default: 'editor',
-      required: true
+      default: () => `editor-${++inc}`
     },
     height: {
       type: String,
-      default: '200px',
+      default: '200px'
     },
     toolbar: {
-      type: Array,
-      default: () => [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]
+      type: [String, Array],
+      default: null
     },
     language: {
       type: String,
@@ -32,42 +32,40 @@ export default {
       default: ''
     }
   },
+  computed: {
+    instance() {
+      return CKEDITOR.instances[this.id]
+    }
+  },
   beforeUpdate () {
-    const ckeditorId = this.id
-
-    if (this.value !== CKEDITOR.instances[ckeditorId].getData()) {
-      CKEDITOR.instances[ckeditorId].setData(this.value)
+    if (this.value !== this.instance.getData()) {
+      this.instance.setData(this.value)
     }
   },
   mounted () {
-    const ckeditorId = this.id
-    const ckeditorConfig = {
+    let config = {
       toolbar: this.toolbar,
       language: this.language,
       height: this.height,
       extraPlugins: this.extraplugins
     }
+    CKEDITOR.replace(this.id, config)
 
-    CKEDITOR.replace(ckeditorId, ckeditorConfig)
-
-    CKEDITOR.instances[ckeditorId].setData(this.value)
-    CKEDITOR.instances[ckeditorId].on('change', () => {
-      let ckeditorData = CKEDITOR.instances[ckeditorId].getData()
-      if (ckeditorData !== this.value) {
-        this.$emit('input', ckeditorData)
+    this.instance.on('change', () => {
+      let html = this.instance.getData()
+      if (html !== this.value) {
+        this.$emit('input', html)
       }
     })
   },
-  destroyed () {
-    const ckeditorId = this.id
-
-    if (CKEDITOR.instances[ckeditorId]) {
-      CKEDITOR.instances[ckeditorId].destroy()
+  beforeDestroy () {
+    if (this.instance) {
+      this.instance.focusManager.blur(true)
+      this.instance.destroy()
     }
   }
 }
 </script>
-
 <style>
 .ckeditor::after {
   content: "";
@@ -75,3 +73,4 @@ export default {
   clear: both;
 }
 </style>
+
