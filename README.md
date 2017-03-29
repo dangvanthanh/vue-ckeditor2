@@ -23,75 +23,19 @@ $ yarn add vue-ckeditor2
 $ npm install vue-ckeditor2 --save
 ```
 
-## Usage
+## Table of Contents
 
-### .vue files
-
-#### Single ckeditor
-```html
-<template>
-  <div class="app">
-    <ckeditor v-model="content" :config="config"></ckeditor>
-  </div>
-</template>
-
-<script>
-import Ckeditor from 'vue-ckeditor2'
-
-export default {
-  data () {
-    return {
-      content: '',
-      config: {
-        toolbar: [
-          [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
-        ],
-        height: 300
-      }
-    }
-  },
-  components: { Ckeditor }
-}
-</script>
-```
-
-#### Multi ckeditor
-```html
-<template>
-  <div class="app">
-    <ckeditor v-model="contentA" :config="configA"></ckeditor>
-    <ckeditor v-model="contentB" :config="configB"></ckeditor>
-  </div>
-</template>
-
-<script>
-import Ckeditor from 'vue-ckeditor2'
-
-export default {
-  data () {
-    return {
-      contentA: '',
-      configA: {
-        toolbar: [[ 'Bold' ]],
-        height: 300
-      },
-      contentB: '',
-      configB: {
-        toolbar: [[ 'Italic' ]],
-        height: 150
-      }
-    }
-  },
-  components: { Ckeditor }
-}
-</script>
-```
+- [Getting Started](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started)
+- [Features](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Features)
+   * [Editor Types](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Features#editor-types)
+   * [Toolbar](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Features#toolbar)
 
 ## Props
 
 | Name           | Type     | Description                              |
 | -------------- | -------- | ---------------------------------------- |
 | `id`           | `String` | Id of instance ckedior. **Default: editor-1** |
+| `types`        | `String` | Types of ckedior. **Default: classic** |
 | `config`       | `Object` | All configuration of ckeditor. **Default: {}** |
 
 ## Build Setup
