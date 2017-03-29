@@ -31,7 +31,7 @@ $ npm install vue-ckeditor2 --save
 ```html
 <template>
   <div class="app">
-    <ckeditor v-model="content" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="content" :config="config"></ckeditor>
   </div>
 </template>
 
@@ -41,7 +41,13 @@ import Ckeditor from 'vue-ckeditor2'
 export default {
   data () {
     return {
-      content: ''
+      content: '',
+      config: {
+        toolbar: [
+          [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
+        ],
+        height: 300
+      }
     }
   },
   components: { Ckeditor }
@@ -53,8 +59,8 @@ export default {
 ```html
 <template>
   <div class="app">
-    <ckeditor v-model="contentA" :id="editorA" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
-    <ckeditor v-model="contentB" :id="editorB" :height="'300px'" :toolbar="[['Format']]"></ckeditor>
+    <ckeditor v-model="contentA" :config="configA"></ckeditor>
+    <ckeditor v-model="contentB" :config="configB"></ckeditor>
   </div>
 </template>
 
@@ -64,10 +70,16 @@ import Ckeditor from 'vue-ckeditor2'
 export default {
   data () {
     return {
-      editorA: 'editor-a',
       contentA: '',
-      editorB: 'editor-b'
-      contentB: ''
+      configA: {
+        toolbar: [[ 'Bold' ]],
+        height: 300
+      },
+      contentB: '',
+      configB: {
+        toolbar: [[ 'Italic' ]],
+        height: 150
+      }
     }
   },
   components: { Ckeditor }
@@ -79,11 +91,8 @@ export default {
 
 | Name           | Type     | Description                              |
 | -------------- | -------- | ---------------------------------------- |
-| `id`           | `String` | Id of instance ckedior. **Default: Default: editor-1 |
-| `height`       | `String` | Height of ckeditor. **Default: 200px**   |
-| `toolbar`      | `Array`  | Toolbar configuration of creditor. **Default: [['Format'], ['Bold', 'Italic'], ['Undo', 'Redo']]** |
-| `language`     | `String` | Language of creditor. **Default: en**    |
-| `extraplugins` | `String` | List of additional plugins to be loaded. |
+| `id`           | `String` | Id of instance ckedior. **Default: editor-1** |
+| `config`       | `Object` | All configuration of ckeditor. **Default: {}** |
 
 ## Build Setup
 
