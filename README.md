@@ -6,7 +6,8 @@
 
 ## Notes
 
-- If you use Vue.js 1x please reference from [Ckeditor Vue 1x](https://github.com/dangvanthanh/vue-ckeditor/tree/1.0)
+- You can see [wiki document](https://github.com/dangvanthanh/vue-ckeditor2/wiki) to how to use vue-ckeditor
+- If you use Vue.js 1x please reference from [Ckeditor Vue 1x](https://github.com/dangvanthanh/vue-ckeditor2/tree/1.0)
 
 ## Requirements
 
@@ -22,13 +23,6 @@ $ yarn add vue-ckeditor2
 # npm
 $ npm install vue-ckeditor2 --save
 ```
-
-## Table of Contents
-
-- [Getting Started](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started)
-- [Features](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Features)
-   * [Editor Types](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Features#editor-types)
-   * [Toolbar](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Features#toolbar)
 
 ## Props
 
