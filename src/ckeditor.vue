@@ -60,11 +60,6 @@ export default {
       this.instance.destroy()
       this.instance = null
     }
-  },
-  watch: {
-    value (val) {
-      this.instance.setData(val)
-    }
   }
 }
 </script>
