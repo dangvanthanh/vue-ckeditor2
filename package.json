@@ -17,8 +17,5 @@
     "vue-ckeditor"
   ],
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
-  "license": "MIT",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "license": "MIT"
 }
