@@ -28,6 +28,7 @@ $ npm install vue-ckeditor2 --save
 
 | Name           | Type     | Description                              |
 | -------------- | -------- | ---------------------------------------- |
+| `name`         | `String` | Name of instance ckedior. **Default: editor-1** |
 | `id`           | `String` | Id of instance ckedior. **Default: editor-1** |
 | `types`        | `String` | Types of ckedior. **Default: classic** |
 | `config`       | `Object` | All configuration of ckeditor. **Default: {}** |
