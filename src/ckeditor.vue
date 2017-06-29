@@ -1,6 +1,12 @@
 <template>
     <div class="ckeditor">
-        <textarea :name="name" :id="id" :value="value" :types="types" :config="config"></textarea>
+        <textarea
+          :name="name"
+          :id="id"
+          :value="value"
+          :types="types"
+          :config="config">
+        </textarea>
     </div>
 </template>
 
@@ -8,6 +14,7 @@
 let inc = 0
 
 export default {
+  name: 'vue-ckeditor',
   props: {
     name: {
       type: String,
@@ -41,7 +48,7 @@ export default {
   },
   mounted () {
     if (typeof CKEDITOR === 'undefined') {
-    console.log('CKEDITOR is missing (http://ckeditor.com/)')
+      console.log('CKEDITOR is missing (http://ckeditor.com/)')
     } else {
       if (this.types === 'inline') {
           CKEDITOR.inline(this.id, this.config)
