@@ -60,6 +60,7 @@ export default {
         let html = this.instance.getData()
         if (html !== this.value) {
           this.$emit('input', html)
+          this.$emit('update:value', html)
         }
       })
     }
