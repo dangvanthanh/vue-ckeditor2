@@ -63,6 +63,14 @@ export default {
           this.$emit('update:value', html)
         }
       })
+
+      this.instance.on('blur', () => {
+        this.$emit('blur', this.instance)
+      })
+
+      this.instance.on('focus', () => {
+        this.$emit('focus', this.instance)
+      })
     }
   },
   beforeDestroy () {
