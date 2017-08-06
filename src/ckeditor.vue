@@ -41,9 +41,11 @@ export default {
       return CKEDITOR.instances[this.id]
     }
   },
-  beforeUpdate () {
-    if (this.value !== this.instance.getData()) {
-      this.instance.setData(this.value)
+  watch: {
+    value (val) {
+      if (val !== this.instance.getData().trim()) {
+        this.instance.setData(val)
+      }
     }
   },
   mounted () {
