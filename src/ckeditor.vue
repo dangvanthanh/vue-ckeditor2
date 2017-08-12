@@ -43,7 +43,8 @@ export default {
   },
   watch: {
     value (val) {
-      if (val !== this.instance.getData().trim()) {
+      let html = this.instance.getData()
+      if (val !== html) {
         this.instance.setData(val)
       }
     }
