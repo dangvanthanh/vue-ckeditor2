@@ -45,7 +45,7 @@ export default {
     value (val) {
       let html = this.instance.getData()
       if (val !== html) {
-        this.instance.setData(val)
+        this.instance.setData(val, null, true)
       }
     }
   },
