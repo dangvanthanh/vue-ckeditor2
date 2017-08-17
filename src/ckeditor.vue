@@ -36,6 +36,9 @@ export default {
       default: () => {}
     }
   },
+  data () {
+    return { destroyed: false }
+  },
   computed: {
     instance () {
       return CKEDITOR.instances[this.id]
@@ -77,11 +80,11 @@ export default {
     }
   },
   beforeDestroy () {
-    if (this.instance) {
+    if (!this.destroyed) {
       this.instance.focusManager.blur(true)
       this.instance.removeAllListeners()
       this.instance.destroy()
-      this.instance = null
+      this.destroyed = true
     }
   }
 }
