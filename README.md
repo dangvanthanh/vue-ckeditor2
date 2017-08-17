@@ -37,11 +37,16 @@ $ npm install vue-ckeditor2 --save
 
 You can use [vue-cli](https://github.com/vuejs/vue-cli) with [vue-rollup-boilerplate templates](https://github.com/dangvanthanh/vue-rollup-boilerplate) or [other vue templates](https://github.com/vuejs-templates)
 
-## Team
+## Created By
 
-[![Dang Van Thanh](https://avatars3.githubusercontent.com/u/2674850?v=3&s=80)](https://github.com/dangvanthanh) | [![Eduárd Moldován](https://avatars3.githubusercontent.com/u/1571258?v=3&s=80)](https://github.com/edimoldovan) | [![Dominique FERET](https://avatars1.githubusercontent.com/u/7206135?v=3&s=80)](https://github.com/DominiqueFERET) | [![comfuture](https://avatars0.githubusercontent.com/u/151300?v=3&s=80)](https://github.com/comfuture)
----|---|--- | ---
-[Dang Van Thanh](https://github.com/dangvanthanh) | [Eduárd Moldován](https://github.com/edimoldovan) | [Dominique FERET](https://github.com/DominiqueFERET) | [comfuture](https://github.com/comfuture)
+- [Dang Van Thanh](https://github.com/dangvanthanh)
+- [Eduárd Moldován](https://github.com/edimoldovan)
+- [Dominique FERET](https://github.com/DominiqueFERET)
+- [comfuture](https://github.com/comfuture)
+- [旺旺](https://github.com/chengpan168)
+- [Tony Yip](https://github.com/tonyhhyip)
+- [Nedyalko Dyakov](https://github.com/ndyakov)
+- [Bryan Miller](https://github.com/bryanjamesmiller)
 
 ## License
 
