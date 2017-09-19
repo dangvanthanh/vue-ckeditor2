@@ -11,7 +11,7 @@
 </template>
 
 <script>
-let inc = 0
+let inc = new Date().getTime()
 
 export default {
   name: 'vue-ckeditor',
@@ -46,9 +46,11 @@ export default {
   },
   watch: {
     value (val) {
-      let html = this.instance.getData()
-      if (val !== html) {
-        this.instance.setData(val, null, true)
+      if (this.instance) {
+        let html = this.instance.getData()
+        if (val !== html) {
+          this.instance.setData(val)
+        }
       }
     }
   },
