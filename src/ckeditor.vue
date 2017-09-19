@@ -11,21 +11,19 @@
 </template>
 
 <script>
-let inc = new Date().getTime()
-
 export default {
   name: 'vue-ckeditor',
   props: {
     name: {
       type: String,
-      default: () => `editor-${++inc}`
+      default: () => `editor-1`
     },
     value: {
       type: String
     },
     id: {
       type: String,
-      default: () => `editor-${inc}`
+      default: () => `editor-1`
     },
     types: {
       type: String,
