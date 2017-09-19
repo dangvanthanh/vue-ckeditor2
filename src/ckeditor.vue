@@ -55,38 +55,47 @@ export default {
     }
   },
   mounted () {
-    if (typeof CKEDITOR === 'undefined') {
-      console.log('CKEDITOR is missing (http://ckeditor.com/)')
-    } else {
-      if (this.types === 'inline') {
-          CKEDITOR.inline(this.id, this.config)
-      } else {
-          CKEDITOR.replace(this.id, this.config)
-      }
-
-      this.instance.on('change', () => {
-        let html = this.instance.getData()
-        if (html !== this.value) {
-          this.$emit('input', html)
-          this.$emit('update:value', html)
-        }
-      })
-
-      this.instance.on('blur', () => {
-        this.$emit('blur', this.instance)
-      })
-
-      this.instance.on('focus', () => {
-        this.$emit('focus', this.instance)
-      })
-    }
+    this.create()
   },
   beforeDestroy () {
-    if (!this.destroyed) {
-      this.instance.focusManager.blur(true)
-      this.instance.removeAllListeners()
-      this.instance.destroy()
-      this.destroyed = true
+    this.destroy()
+  },
+  methods: {
+    create () {
+      if (typeof CKEDITOR === 'undefined') {
+        console.log('CKEDITOR is missing (http://ckeditor.com/)')
+      } else {
+        if (this.types === 'inline') {
+            CKEDITOR.inline(this.id, this.config)
+        } else {
+            CKEDITOR.replace(this.id, this.config)
+        }
+
+        this.instance.on('change', this.onChange)
+        this.instance.on('blur', this.onBlur)
+        this.instance.on('focus', this.onFocus)
+      }
+    },
+    destroy () {
+      if (!this.destroyed) {
+        this.instance.focusManager.blur(true)
+        this.instance.removeAllListeners()
+        this.instance.destroy()
+        this.destroyed = true
+      }
+    },
+    onChange () {
+      let html = this.instance.getData()
+      if (html !== this.value) {
+        this.$emit('input', html)
+        this.$emit('update:value', html)
+      }
+    },
+    onBlur () {
+      this.$emit('blur', this.instance)
+    },
+    onFocus () {
+      this.$emit('focus', this.instance)
     }
   }
 }
