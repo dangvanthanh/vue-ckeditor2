@@ -16,14 +16,14 @@ export default {
   props: {
     name: {
       type: String,
-      default: () => `editor-1`
+      default: () => `editor`
     },
     value: {
       type: String
     },
     id: {
       type: String,
-      default: () => `editor-1`
+      default: () => `editor`
     },
     types: {
       type: String,
@@ -45,10 +45,7 @@ export default {
   watch: {
     value (val) {
       if (this.instance) {
-        let html = this.instance.getData()
-        if (val !== html) {
-          this.instance.setData(val)
-        }
+        this.update(val)
       }
     }
   },
@@ -69,9 +66,16 @@ export default {
             CKEDITOR.replace(this.id, this.config)
         }
 
+        this.instance.setData(this.value)
         this.instance.on('change', this.onChange)
         this.instance.on('blur', this.onBlur)
         this.instance.on('focus', this.onFocus)
+      }
+    },
+    update (val) {
+      let html = this.instance.getData()
+      if (html !== val) {
+        this.instance.setData(val)
       }
     },
     destroy () {
@@ -86,7 +90,6 @@ export default {
       let html = this.instance.getData()
       if (html !== this.value) {
         this.$emit('input', html)
-        this.$emit('update:value', html)
       }
     },
     onBlur () {
