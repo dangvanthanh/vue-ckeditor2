@@ -1,6 +1,6 @@
 {
   "name": "vue-ckeditor2",
-  "version": "1.16.0",
+  "version": "1.17.0",
   "description": "Ckeditor using for Vue.js 2",
   "main": "src/VCkeditor.vue",
   "peerDependencies": {
