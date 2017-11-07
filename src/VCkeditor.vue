@@ -18,7 +18,7 @@ export default {
   props: {
     name: {
       type: String,
-      default: () => `editor-${inc}`
+      default: () => `editor-${++inc}`
     },
     value: {
       type: String
