@@ -69,6 +69,9 @@ export default {
         }
 
         this.instance.setData(this.value)
+        this.instance.on('instanceReady', () => {
+          this.instance.setData(this.value)
+        })
         this.instance.on('change', this.onChange)
         this.instance.on('blur', this.onBlur)
         this.instance.on('focus', this.onFocus)
