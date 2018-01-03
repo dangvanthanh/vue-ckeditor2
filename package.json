@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "vue-ckeditor2"
+    "url": "vue-ckeditor"
   },
   "keywords": ["vue", "ckeditor", "vue-ckeditor"],
   "scripts": {
