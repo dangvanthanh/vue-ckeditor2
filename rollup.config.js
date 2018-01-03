@@ -7,6 +7,7 @@ import nodeGlobals from 'rollup-plugin-node-globals'
 import uglify from 'rollup-plugin-uglify'
 import livereload from 'rollup-plugin-livereload'
 import serve from 'rollup-plugin-serve'
+import replace from 'rollup-plugin-replace'
 
 let plugins = [
   alias({
@@ -42,16 +43,23 @@ const isDevelopment = process.env.NODE_ENV === `development`
 
 if (isProduction) {
   config.sourcemap = false
+  config.plugins.push(
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
+  )
   config.plugins.push(uglify())
 }
 
 if (isDevelopment) {
   config.plugins.push(livereload())
-  config.plugins.push(serve({
-    contentBase: './dist/',
-    port: 8080,
-    open: true
-  }))
+  config.plugins.push(
+    serve({
+      contentBase: './dist/',
+      port: 8080,
+      open: true
+    })
+  )
 }
 
 export default config
