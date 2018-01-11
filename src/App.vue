@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Ckeditor from './components/Ckeditor.vue'
+import Ckeditor from '@/components/Ckeditor.vue'
 
 export default {
   name: 'app',
