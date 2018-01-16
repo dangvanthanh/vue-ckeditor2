@@ -1,13 +1,13 @@
 <template>
-    <div class="ckeditor">
-        <textarea
-          :name="name"
-          :id="id"
-          :value="value"
-          :types="types"
-          :config="config">
-        </textarea>
-    </div>
+  <div class="ckeditor">
+    <textarea
+      :name="name"
+      :id="id"
+      :value="value"
+      :types="types"
+      :config="config">
+    </textarea>
+  </div>
 </template>
 
 <script>
