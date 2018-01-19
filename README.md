@@ -16,11 +16,12 @@
 
 ## Install
 
+```html
+<script src="https://unpkg.com/vue-ckeditor2"></script>
 ```
-# yarn (recommend)
-$ yarn add vue-ckeditor2
+or
 
-# npm
+```
 $ npm install vue-ckeditor2 --save
 ```
 
