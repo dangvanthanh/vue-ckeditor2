@@ -46,9 +46,11 @@ export default {
   },
   watch: {
     value (val) {
-      if (this.instance) {
-        this.update(val)
-      }
+      try {
+        if (this.instance) {
+          this.update(val)
+        }
+      } catch (e) {}
     }
   },
   mounted () {
