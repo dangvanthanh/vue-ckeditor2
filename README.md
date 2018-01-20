@@ -16,11 +16,12 @@
 
 ## Install
 
+# CDN
+
 ```html
 <script src="https://unpkg.com/vue-ckeditor2"></script>
 ```
-or
-
+# NPM
 ```
 $ npm install vue-ckeditor2 --save
 ```
