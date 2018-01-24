@@ -82,7 +82,7 @@ export default {
     update (val) {
       let html = this.instance.getData()
       if (html !== val) {
-        this.instance.setData(val)
+        this.instance.setData(val, { internal: true })
       }
     },
     destroy () {
