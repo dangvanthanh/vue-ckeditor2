@@ -90,7 +90,7 @@ var Ckeditor = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c
     update: function update (val) {
       var html = this.instance.getData();
       if (html !== val) {
-        this.instance.setData(val, { internal: true });
+        this.instance.setData(val, { internal: false });
       }
     },
     destroy: function destroy () {
