@@ -10,7 +10,8 @@
     "build": "npm run build:prod && npm run build:dev && npm run build:esm",
     "build:prod": "rollup -c rollup.config.prod.js",
     "build:dev": "rollup -c rollup.config.dev.js",
-    "build:esm": "rollup -c rollup.config.esm.js"
+    "build:esm": "rollup -c rollup.config.esm.js",
+    "release": "np"
   },
   "peerDependencies": {
     "vue": ">= 2",
