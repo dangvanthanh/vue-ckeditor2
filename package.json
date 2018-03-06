@@ -24,14 +24,14 @@
   "keywords": ["vue", "ckeditor", "vue-ckeditor"],
   "license": "MIT",
   "devDependencies": {
-    "rollup": "^0.54.1",
+    "rollup": "^0.56.4",
     "rollup-plugin-alias": "^1.4.0",
-    "rollup-plugin-buble": "^0.18.0",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.2",
-    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
-    "uglify-es": "^3.3.7",
+    "uglify-es": "^3.3.9",
     "vue-template-compiler": "^2.5.13"
   }
 }
