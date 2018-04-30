@@ -1,6 +1,6 @@
 {
   "name": "vue-ckeditor2",
-  "version": "1.25.0",
+  "version": "1.26.0",
   "description": "Ckeditor 4 using with Vue.js",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "main": "dist/vue-ckeditor2.js",
@@ -10,8 +10,7 @@
     "build": "npm run build:prod && npm run build:dev && npm run build:esm",
     "build:prod": "rollup -c rollup.config.prod.js",
     "build:dev": "rollup -c rollup.config.dev.js",
-    "build:esm": "rollup -c rollup.config.esm.js",
-    "release": "np"
+    "build:esm": "rollup -c rollup.config.esm.js"
   },
   "peerDependencies": {
     "vue": ">= 2",
@@ -21,7 +20,11 @@
     "type": "git",
     "url": "git+https://github.com/dangvanthanh/vue-ckeditor2.git"
   },
-  "keywords": ["vue", "ckeditor", "vue-ckeditor"],
+  "keywords": [
+    "vue",
+    "ckeditor",
+    "vue-ckeditor"
+  ],
   "license": "MIT",
   "devDependencies": {
     "rollup": "^0.56.4",

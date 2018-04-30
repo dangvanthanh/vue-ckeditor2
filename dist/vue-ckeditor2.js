@@ -94,12 +94,14 @@ var Ckeditor = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c
       }
     },
     destroy: function destroy () {
-      if (!this.destroyed) {
-        this.instance.focusManager.blur(true);
-        this.instance.removeAllListeners();
-        this.instance.destroy();
-        this.destroyed = true;
-      }
+      try {
+        if (!this.destroyed) {
+          this.instance.focusManager.blur(true);
+          this.instance.removeAllListeners();
+          this.instance.destroy();
+          this.destroyed = true;
+        }
+      } catch (e) {}
     },
     onChange: function onChange () {
       var html = this.instance.getData();

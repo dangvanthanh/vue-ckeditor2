@@ -86,12 +86,14 @@ export default {
       }
     },
     destroy () {
-      if (!this.destroyed) {
-        this.instance.focusManager.blur(true)
-        this.instance.removeAllListeners()
-        this.instance.destroy()
-        this.destroyed = true
-      }
+      try {
+        if (!this.destroyed) {
+          this.instance.focusManager.blur(true)
+          this.instance.removeAllListeners()
+          this.instance.destroy()
+          this.destroyed = true
+        }
+      } catch (e) {}
     },
     onChange () {
       let html = this.instance.getData()
