@@ -1,8 +1,8 @@
-import alias from 'rollup-plugin-alias'
-import vue from 'rollup-plugin-vue'
-import buble from 'rollup-plugin-buble'
-import nodeResolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
+import alias from 'rollup-plugin-alias';
+import vue from 'rollup-plugin-vue';
+import buble from 'rollup-plugin-buble';
+import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 
 export default {
   input: 'src/index.js',
@@ -10,17 +10,17 @@ export default {
     name: 'VueCkeditor2',
     file: 'dist/vue-ckeditor2.js',
     format: 'umd',
-    sourcemap: true
+    sourcemap: false,
   },
   plugins: [
     alias({
-      '@': './'
+      '@': './',
     }),
     vue({
-      css: true
+      css: true,
     }),
     buble(),
-    nodeResolve({ browser: true, jsnext: true, main: true }),
-    commonjs()
-  ]
-}
+    nodeResolve({browser: true, jsnext: true, main: true}),
+    commonjs(),
+  ],
+};
