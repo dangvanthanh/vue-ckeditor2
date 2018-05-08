@@ -43,7 +43,10 @@
       }
     },
     data: function data () {
-      return { destroyed: false }
+      return {
+        destroyed: false,
+        instanceValue: ''
+      }
     },
     computed: {
       instance: function instance () {
@@ -88,8 +91,7 @@
         }
       },
       update: function update (val) {
-        var html = this.instance.getData();
-        if (html !== val) {
+        if (this.instanceValue !== val) {
           this.instance.setData(val, { internal: false });
         }
       },
@@ -107,6 +109,7 @@
         var html = this.instance.getData();
         if (html !== this.value) {
           this.$emit('input', html);
+          this.instanceValue = html;
         }
       },
       onBlur: function onBlur () {
@@ -146,7 +149,7 @@
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-73c25e97_0", { source: "\n.ckeditor::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n", map: undefined, media: undefined });
+    inject("data-v-46b1d66b_0", { source: "\n.ckeditor::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -164,7 +167,7 @@
     var component = script$$1 || {};
 
     {
-      component.__file = "/Users/dangvanthanh/Code/dev/vue/vue-ckeditor2/src/Ckeditor.vue";
+      component.__file = "/Git/vue-ckeditor2/src/Ckeditor.vue";
     }
 
     if (!component.render) {
