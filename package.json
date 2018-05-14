@@ -1,16 +1,14 @@
 {
   "name": "vue-ckeditor2",
-  "version": "1.26.0",
+  "version": "2.0.0",
   "description": "Ckeditor 4 using with Vue.js",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
-  "main": "dist/vue-ckeditor2.js",
-  "unpkg": "dist/vue-ckeditor2.min.js",
-  "module": "dist/vue-ckeditor2.esm.js",
+  "main": "dist/vue-ckeditor2.cjs.js",
+  "module": "dist/vue-ckeditor2.es.js",
+  "unpkg": "dist/vue-ckeditor2.js",
   "scripts": {
-    "build": "npm run build:prod && npm run build:dev && npm run build:esm",
-    "build:prod": "rollup -c rollup.config.prod.js",
-    "build:dev": "rollup -c rollup.config.dev.js",
-    "build:esm": "rollup -c rollup.config.esm.js"
+    "build": "bili src/index.js --format umd,cjs,es --exports named --module-name VueCkeditor",
+    "example": "poi example/index.js"
   },
   "peerDependencies": {
     "vue": ">= 2",
@@ -27,14 +25,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "rollup": "^0.58.1",
-    "rollup-plugin-alias": "^1.4.0",
-    "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-node-resolve": "^3.0.3",
-    "rollup-plugin-uglify": "^3.0.0",
-    "rollup-plugin-vue": "^4.0.1",
-    "uglify-es": "^3.3.9",
-    "vue-template-compiler": "^2.5.16"
+    "bili": "^3.1.2",
+    "poi": "^10.1.6"
   }
 }

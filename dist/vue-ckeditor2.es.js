@@ -1,43 +1,49 @@
-export const VueCkeditor = (opts = {}) => {
-  const name = opts.name || 'VueCkeditor';
-  let inc = new Date().getTime();
-
+var VueCkeditor = function VueCkeditor() {
+  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var name = opts.name || 'VueCkeditor';
+  var inc = new Date().getTime();
   return {
     name: name,
     props: {
       name: {
         type: String,
-        default: () => `editor-${++inc}`
+        default: function _default() {
+          return "editor-".concat(++inc);
+        }
       },
       value: {
         type: String
       },
       id: {
         type: String,
-        default: () => `editor-${inc}`
+        default: function _default() {
+          return "editor-".concat(inc);
+        }
       },
       types: {
         type: String,
-        default: () => `classic`
+        default: function _default() {
+          return "classic";
+        }
       },
       config: {
         type: Object,
-        default: () => {}
+        default: function _default() {}
       }
     },
-    data() {
+    data: function data() {
       return {
         destroyed: false,
         instanceValue: ''
       };
     },
     computed: {
-      instance() {
+      instance: function instance() {
         return CKEDITOR.instances[this.id];
       }
     },
     watch: {
-      value(val) {
+      value: function value(val) {
         try {
           if (this.instance) {
             this.update(val);
@@ -45,27 +51,29 @@ export const VueCkeditor = (opts = {}) => {
         } catch (e) {}
       }
     },
-    mounted() {
+    mounted: function mounted() {
       this.create();
     },
-    beforeDestroy() {
+    beforeDestroy: function beforeDestroy() {
       this.destroy();
     },
-    render(h) {
-      return h('div', { class: 'ckeditor' }, [
-        h('textarea', {
-          attrs: {
-            name: this.name,
-            id: this.id,
-            value: this.value,
-            types: this.types,
-            config: this.config
-          }
-        })
-      ]);
+    render: function render(h) {
+      return h('div', {
+        class: 'ckeditor'
+      }, [h('textarea', {
+        attrs: {
+          name: this.name,
+          id: this.id,
+          value: this.value,
+          types: this.types,
+          config: this.config
+        }
+      })]);
     },
     methods: {
-      create() {
+      create: function create() {
+        var _this = this;
+
         if (typeof CKEDITOR === 'undefined') {
           console.log('CKEDITOR is missing (http://ckeditor.com/)');
         } else {
@@ -76,25 +84,27 @@ export const VueCkeditor = (opts = {}) => {
           }
 
           this.instance.setData(this.value);
-          this.instance.on('instanceReady', () => {
-            this.instance.setData(this.value);
+          this.instance.on('instanceReady', function () {
+            _this.instance.setData(_this.value);
           });
           this.instance.on('change', this.onChange);
           this.instance.on('blur', this.onBlur);
           this.instance.on('focus', this.onFocus);
-          this.instance.on('fileUploadResponse', () => {
-            setTimeout(() => {
-              this.onChange;
+          this.instance.on('fileUploadResponse', function () {
+            setTimeout(function () {
+              _this.onChange;
             }, 0);
           });
         }
       },
-      update(val) {
+      update: function update(val) {
         if (this.instanceValue !== val) {
-          this.instance.setData(val, { internal: false });
+          this.instance.setData(val, {
+            internal: false
+          });
         }
       },
-      destroy() {
+      destroy: function destroy() {
         try {
           if (!this.destroyed) {
             this.instance.focusManager.blur(true);
@@ -104,26 +114,27 @@ export const VueCkeditor = (opts = {}) => {
           }
         } catch (e) {}
       },
-      onChange() {
-        let html = this.instance.getData();
+      onChange: function onChange() {
+        var html = this.instance.getData();
+
         if (html !== this.value) {
           this.$emit('input', html);
           this.instanceValue = html;
         }
       },
-      onBlur() {
+      onBlur: function onBlur() {
         this.$emit('blur', this.instance);
       },
-      onFocus() {
+      onFocus: function onFocus() {
         this.$emit('focus', this.instance);
       }
     }
   };
 };
-
-export const install = (Vue, opts) => {
-  const Component = VueCkeditor(opts);
+var install = function install(Vue, opts) {
+  var Component = VueCkeditor(opts);
   Vue.component(Component.name, Component);
 };
 
 export default install;
+export { VueCkeditor, install };
