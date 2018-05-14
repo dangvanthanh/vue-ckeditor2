@@ -37,7 +37,10 @@ export default {
     }
   },
   data () {
-    return { destroyed: false }
+    return {
+      destroyed: false,
+      instanceValue: ''
+    }
   },
   computed: {
     instance () {
@@ -83,8 +86,7 @@ export default {
       }
     },
     update (val) {
-      let html = this.instance.getData()
-      if (html !== val) {
+      if (this.instanceValue !== val) {
         this.instance.setData(val, { internal: false })
       }
     },
@@ -102,6 +104,7 @@ export default {
       let html = this.instance.getData()
       if (html !== this.value) {
         this.$emit('input', html)
+        this.instanceValue = html
       }
     },
     onBlur () {
