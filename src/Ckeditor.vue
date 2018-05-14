@@ -77,6 +77,9 @@ export default {
         this.instance.on('change', this.onChange)
         this.instance.on('blur', this.onBlur)
         this.instance.on('focus', this.onFocus)
+        this.instance.on('fileUploadResponse', () => {
+          setTimeout( () => {this.onChange}, 0)
+        })
       }
     },
     update (val) {
