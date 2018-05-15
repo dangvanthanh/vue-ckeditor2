@@ -67,10 +67,14 @@ var VueCkeditor = function VueCkeditor() {
       }, [h('textarea', {
         attrs: {
           name: this.name,
-          id: this.id,
-          value: this.value,
+          id: this.id
+        },
+        props: {
           types: this.types,
           config: this.config
+        },
+        domProps: {
+          value: this.value
         }
       })]);
     },
