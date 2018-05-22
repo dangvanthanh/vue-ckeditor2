@@ -57,8 +57,6 @@
 </template>
 
 <script>
-import { VueCkeditor } from '../src';
-
 export default {
   data() {
     return {
@@ -81,13 +79,22 @@ export default {
         }
       },
       multiplePlugins: {
-        content: 'Use multiple plugins image2 and autogrow',
+        content:`
+          <p>Use multiple plugins image2 and autogrow and easyimage</p>
+          <figure class="easyimage easyimage-full">
+            <img alt="Three Monks walking on ancient temple." width="912" sizes="100vw" src="https://cdn.dribbble.com/users/458522/screenshots/4615441/attachments/1043210/deadpool_love_add.jpg" />
+            <figcaption></figcaption>
+          </figure>
+        `,
         config: {
           toolbar: [
             ['Image']
           ],
           height: 200,
-          extraPlugins: 'image2,autogrow',
+          extraPlugins: 'image2,autogrow,xml,ajax,cloudservices,balloonpanel,balloontoolbar,imagebase,easyimage',
+          emovePlugins: 'image',
+          cloudServices_tokenUrl: 'https://33372.cke-cs.com/token/dev/kquv5QAPjvSD8p7GYFSFa3uKP6OcikCtjcyDpqW1Aqy3eotwe2pPLVdAjJVu',
+          cloudServices_uploadUrl: 'https://33372.cke-cs.com/easyimage/upload/',
           autoGrow_minHeight: 200,
           autoGrow_maxHeight: 600
         }
