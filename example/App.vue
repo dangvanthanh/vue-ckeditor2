@@ -88,13 +88,43 @@ export default {
         `,
         config: {
           toolbar: [
-            ['Image']
+            ['Image', 'EasyImageUpload']
           ],
           height: 200,
           extraPlugins: 'image2,autogrow,xml,ajax,cloudservices,balloonpanel,balloontoolbar,imagebase,easyimage',
           emovePlugins: 'image',
           cloudServices_tokenUrl: 'https://33372.cke-cs.com/token/dev/kquv5QAPjvSD8p7GYFSFa3uKP6OcikCtjcyDpqW1Aqy3eotwe2pPLVdAjJVu',
           cloudServices_uploadUrl: 'https://33372.cke-cs.com/easyimage/upload/',
+          easyimage_styles: {
+            gradient1: {
+              group: 'easyimage-gradients',
+              attributes: {
+                  'class': 'easyimage-gradient-1'
+              },
+              label: 'Blue Gradient',
+              icon: 'https://sdk.ckeditor.com/../samples/assets/easyimage/icons/gradient1.png',
+              iconHiDpi: 'https://sdk.ckeditor.com/../samples/assets/easyimage/icons/hidpi/gradient1.png'
+            },
+            gradient2: {
+              group: 'easyimage-gradients',
+              attributes: {
+                  'class': 'easyimage-gradient-2'
+              },
+              label: 'Pink Gradient',
+              icon: 'https://sdk.ckeditor.com/../samples/assets/easyimage/icons/gradient2.png',
+              iconHiDpi: 'https://sdk.ckeditor.com/../samples/assets/easyimage/icons/hidpi/gradient2.png'
+            },
+            noGradient: {
+              group: 'easyimage-gradients',
+              attributes: {
+                  'class': 'easyimage-no-gradient'
+              },
+              label: 'No Gradient',
+              icon: 'https://sdk.ckeditor.com/../samples/assets/easyimage/icons/nogradient.png',
+              iconHiDpi: 'https://sdk.ckeditor.com/../samples/assets/easyimage/icons/hidpi/nogradient.png'
+            }
+          },
+          easyimage_toolbar: ['EasyImageFull', 'EasyImageSide', 'EasyImageGradient1', 'EasyImageGradient2', 'EasyImageNoGradient', 'EasyImageAlt'],
           autoGrow_minHeight: 200,
           autoGrow_maxHeight: 600
         }
