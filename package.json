@@ -1,6 +1,6 @@
 {
   "name": "vue-ckeditor2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Ckeditor 4 using with Vue.js",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "main": "dist/vue-ckeditor2.cjs.js",
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "bili src/index.js --format umd,cjs,es --exports named --module-name VueCkeditor",
     "example": "poi example/index.js",
-    "public": "poi build example/index.js --out-dir public && surge"
+    "public": "poi build example/index.js --out-dir public"
   },
   "peerDependencies": {
     "vue": ">= 2",
