@@ -119,7 +119,7 @@
             if (!this.destroyed) {
               this.instance.focusManager.blur(true);
               this.instance.removeAllListeners();
-              this.instance.destroy();
+              this.instance.destroy(true);
               this.destroyed = true;
             }
           } catch (e) {}
