@@ -94,6 +94,7 @@ Thanks to:
 - [Bryan Miller](https://github.com/bryanjamesmiller)
 - [Jeff Omiecinski](https://github.com/omiecinski)
 - [rlfscin](https://github.com/rlfscin)
+- [Renato Souza](https://github.com/renatosistemasvc)
 
 ## License
 

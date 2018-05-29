@@ -112,7 +112,7 @@ var VueCkeditor = function VueCkeditor() {
         try {
           if (!this.destroyed) {
             this.instance.focusManager.blur(true);
-            this.instance.removeAllListeners();
+            CKEDITOR.removeAllListeners();
             this.instance.destroy(true);
             this.destroyed = true;
           }
