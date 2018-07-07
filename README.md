@@ -27,6 +27,28 @@ $ npm install vue-ckeditor2 --save
 
 > This document applies to v2.0+. If you are looking for older versions, docs are [here](https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started)
 
+### Component
+
+```javascript
+import Vue from 'vue';
+import { VueCkeditor } from 'vue-ckeditor2';
+
+Vue.component('vue-ckeditor', VueCkeditor);
+```
+
+or
+
+```javascript
+import Vue from 'vue';
+import { VueCkeditor } from 'vue-ckeditor2';
+
+export default {
+  components: { VueCkeditor }
+};
+```
+
+### Plugin
+
 ```javascript
 import Vue from 'vue';
 import VueCkeditor from 'vue-ckeditor2';
