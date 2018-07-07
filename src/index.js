@@ -91,7 +91,7 @@ export const VueCkeditor = (opts = {}) => {
           this.instance.on('focus', this.onFocus);
           this.instance.on('fileUploadResponse', () => {
             setTimeout(() => {
-              this.onChange;
+              this.onChange();
             }, 0);
           });
 
