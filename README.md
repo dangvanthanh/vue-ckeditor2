@@ -68,12 +68,13 @@ export default {
 
 ### Props
 
-| Name           | Type     | Description                              |
-| -------------- | -------- | ---------------------------------------- |
-| `name`         | `String` | Name of instance ckedior. **Default: editor-1** |
-| `id`           | `String` | Id of instance ckedior. **Default: editor-1** |
-| `types`        | `String` | Types of ckedior. **Default: classic** |
-| `config`       | `Object` | All configuration of ckeditor. **Default: {}** |
+| Name                    | Type       | Description                              |
+| ----------------------- | ---------- | ---------------------------------------- |
+| `name`                  | `String`   | Name of instance ckedior. **Default: editor-1** |
+| `id`                    | `String`   | Id of instance ckedior. **Default: editor-1** |
+| `types`                 | `String`   | Types of ckedior. **Default: classic** |
+| `config`                | `Object`   | All configuration of ckeditor. **Default: {}** |
+| `instanceReadyCallback` | `Function` | Optional function that will be attached to CKEditor instanceReady event. |
 
 ## Build Setup
 

@@ -23,6 +23,9 @@ export const VueCkeditor = (opts = {}) => {
       config: {
         type: Object,
         default: () => {}
+      },
+      instanceReadyCallback: {
+        type: Function
       }
     },
     data() {
@@ -91,6 +94,10 @@ export const VueCkeditor = (opts = {}) => {
               this.onChange;
             }, 0);
           });
+
+          if (typeof this.instanceReadyCallback != 'undefined') {
+            this.instance.on('instanceReady', this.instanceReadyCallback);
+          }
         }
       },
       update(val) {
