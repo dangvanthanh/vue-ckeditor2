@@ -1,12 +1,13 @@
 {
   "name": "vue-ckeditor2",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Ckeditor 4 using with Vue.js",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "main": "dist/vue-ckeditor2.cjs.js",
   "module": "dist/vue-ckeditor2.es.js",
   "unpkg": "dist/vue-ckeditor2.js",
   "scripts": {
+    "precommit": "pretty-quick --staged",
     "build": "bili src/index.js --format umd,cjs,es --exports named --module-name VueCkeditor"
   },
   "peerDependencies": {
@@ -24,6 +25,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bili": "^3.1.2"
+    "bili": "^3.1.2",
+    "husky": "^0.14.3",
+    "prettier": "1.13.7",
+    "pretty-quick": "^1.6.0"
   }
 }

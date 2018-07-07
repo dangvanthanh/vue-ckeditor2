@@ -1,5 +1,6 @@
 var VueCkeditor = function VueCkeditor() {
-  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var opts =
+    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var name = opts.name || 'VueCkeditor';
   var inc = new Date().getTime();
   return {
@@ -8,7 +9,7 @@ var VueCkeditor = function VueCkeditor() {
       name: {
         type: String,
         default: function _default() {
-          return "editor-".concat(++inc);
+          return 'editor-'.concat(++inc);
         }
       },
       value: {
@@ -17,18 +18,21 @@ var VueCkeditor = function VueCkeditor() {
       id: {
         type: String,
         default: function _default() {
-          return "editor-".concat(inc);
+          return 'editor-'.concat(inc);
         }
       },
       types: {
         type: String,
         default: function _default() {
-          return "classic";
+          return 'classic';
         }
       },
       config: {
         type: Object,
         default: function _default() {}
+      },
+      instanceReadyCallback: {
+        type: Function
       }
     },
     data: function data() {
@@ -58,21 +62,27 @@ var VueCkeditor = function VueCkeditor() {
       this.destroy();
     },
     render: function render(h) {
-      return h('div', {
-        class: 'ckeditor'
-      }, [h('textarea', {
-        attrs: {
-          name: this.name,
-          id: this.id
+      return h(
+        'div',
+        {
+          class: 'ckeditor'
         },
-        props: {
-          types: this.types,
-          config: this.config
-        },
-        domProps: {
-          value: this.value
-        }
-      })]);
+        [
+          h('textarea', {
+            attrs: {
+              name: this.name,
+              id: this.id
+            },
+            props: {
+              types: this.types,
+              config: this.config
+            },
+            domProps: {
+              value: this.value
+            }
+          })
+        ]
+      );
     },
     methods: {
       create: function create() {
@@ -88,17 +98,21 @@ var VueCkeditor = function VueCkeditor() {
           }
 
           this.instance.setData(this.value);
-          this.instance.on('instanceReady', function () {
+          this.instance.on('instanceReady', function() {
             _this.instance.setData(_this.value);
           });
           this.instance.on('change', this.onChange);
           this.instance.on('blur', this.onBlur);
           this.instance.on('focus', this.onFocus);
-          this.instance.on('fileUploadResponse', function () {
-            setTimeout(function () {
-              _this.onChange;
+          this.instance.on('fileUploadResponse', function() {
+            setTimeout(function() {
+              _this.onChange();
             }, 0);
           });
+
+          if (typeof this.instanceReadyCallback != 'undefined') {
+            this.instance.on('instanceReady', this.instanceReadyCallback);
+          }
         }
       },
       update: function update(val) {
