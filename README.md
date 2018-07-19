@@ -29,33 +29,6 @@ $ npm install vue-ckeditor2 --save
 
 ### Component
 
-```javascript
-import Vue from 'vue';
-import { VueCkeditor } from 'vue-ckeditor2';
-
-Vue.component('vue-ckeditor', VueCkeditor);
-```
-
-or
-
-```javascript
-import Vue from 'vue';
-import { VueCkeditor } from 'vue-ckeditor2';
-
-export default {
-  components: { VueCkeditor }
-};
-```
-
-### Plugin
-
-```javascript
-import Vue from 'vue';
-import VueCkeditor from 'vue-ckeditor2';
-
-Vue.use(VueCkeditor);
-```
-
 Then in your component:
 
 ```vue
@@ -66,7 +39,10 @@ Then in your component:
 </template>
 
 <script>
+import VueCkeditor from 'vue-ckeditor2';
+
 export default {
+  components: { VueCkeditor },
   data() {
     return {
       content: '',
