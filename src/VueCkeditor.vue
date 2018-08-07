@@ -80,6 +80,7 @@ export default {
           this.instance.setData(this.value);
         });
         this.instance.on('change', this.onChange);
+        this.instance.on('mode', this.onMode);
         this.instance.on('blur', this.onBlur);
         this.instance.on('focus', this.onFocus);
         this.instance.on('fileUploadResponse', () => {
@@ -120,6 +121,14 @@ export default {
     },
     onFocus() {
       this.$emit('focus', this.instance);
+    },
+    onMode() {
+      if (this.instance.mode === 'source') {
+        let editable = this.instance.editable();
+        editable.attachListener(editable, 'input', () => {
+          this.onChange();
+        });
+      }
     }
   }
 };

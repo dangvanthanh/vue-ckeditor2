@@ -91,6 +91,7 @@ var script = {
           _this.instance.setData(_this.value);
         });
         this.instance.on('change', this.onChange);
+        this.instance.on('mode', this.onMode);
         this.instance.on('blur', this.onBlur);
         this.instance.on('focus', this.onFocus);
         this.instance.on('fileUploadResponse', function() {
@@ -134,6 +135,16 @@ var script = {
     },
     onFocus: function onFocus() {
       this.$emit('focus', this.instance);
+    },
+    onMode: function onMode() {
+      var _this2 = this;
+
+      if (this.instance.mode === 'source') {
+        var editable = this.instance.editable();
+        editable.attachListener(editable, 'input', function() {
+          _this2.onChange();
+        });
+      }
     }
   }
 };
@@ -197,12 +208,10 @@ function __vue_normalize__(
   createInjectorSSR
 ) {
   var component =
-    (typeof script$$1 === 'function' ? script$$1.options : script$$1) || {};
+    (typeof script$$1 === 'function' ? script$$1.options : script$$1) || {}; // For security concerns, we use only base name in production mode.
 
-  {
-    component.__file =
-      '/Users/dangvanthanh/Code/dev/vue/vue-ckeditor2/src/VueCkeditor.vue';
-  }
+  component.__file =
+    '/Users/dangvanthanh/Code/dev/vue/vue-ckeditor2/src/VueCkeditor.vue';
 
   if (!component.render) {
     component.render = template.render;
