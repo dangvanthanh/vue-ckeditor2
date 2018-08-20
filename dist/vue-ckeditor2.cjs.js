@@ -14,6 +14,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 //
 //
 //
+//
 var inc = new Date().getTime();
 var script = {
   name: 'VueCkeditor',
@@ -45,6 +46,12 @@ var script = {
     },
     instanceReadyCallback: {
       type: Function
+    },
+    readOnlyMode: {
+      type: Boolean,
+      default: function _default() {
+        return false;
+      }
     }
   },
   data: function data() {
@@ -59,12 +66,13 @@ var script = {
     }
   },
   watch: {
-    value: function value(val) {
-      try {
-        if (this.instance) {
-          this.update(val);
-        }
-      } catch (e) {}
+    value: {
+      handler: undefined.handlerUpdate(val),
+      immediate: true
+    },
+    readOnlyMode: {
+      handler: undefined.handlerReadOnlyMode(val),
+      immediate: true
     }
   },
   mounted: function mounted() {
@@ -145,6 +153,16 @@ var script = {
           _this2.onChange();
         });
       }
+    },
+    handlerUpdate: function handlerUpdate(val) {
+      try {
+        if (this.instance) {
+          this.update(val);
+        }
+      } catch (e) {}
+    },
+    handlerReadOnlyMode: function handlerReadOnlyMode(val) {
+      this.instance.setReadOnly(val);
     }
   }
 };
@@ -171,7 +189,8 @@ var __vue_render__ = function __vue_render__() {
           name: _vm.name,
           id: _vm.id,
           types: _vm.types,
-          config: _vm.config
+          config: _vm.config,
+          disabled: _vm.readOnlyMode
         },
         domProps: {
           value: _vm.value

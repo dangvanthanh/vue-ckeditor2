@@ -41,8 +41,8 @@ export default {
     },
     readOnlyMode: {
       type: Boolean,
-      default: () => false,
-    },
+      default: () => false
+    }
   },
   data() {
     return {
@@ -56,15 +56,13 @@ export default {
     }
   },
   watch: {
-    value(val) {
-      try {
-        if (this.instance) {
-          this.update(val);
-        }
-      } catch (e) {}
+    value: {
+      handler: this.handlerUpdate(val),
+      immediate: true
     },
-    readOnlyMode(val) {
-      this.instance.setReadOnly(val);
+    readOnlyMode: {
+      handler: this.handlerReadOnlyMode(val),
+      immediate: true
     }
   },
   mounted() {
@@ -137,6 +135,16 @@ export default {
           this.onChange();
         });
       }
+    },
+    handlerUpdate(val) {
+      try {
+        if (this.instance) {
+          this.update(val);
+        }
+      } catch (e) {}
+    },
+    handlerReadOnlyMode(val) {
+      this.instance.setReadOnly(val);
     }
   }
 };
