@@ -56,13 +56,15 @@ export default {
     }
   },
   watch: {
-    value: {
-      handler: this.handlerUpdate(val),
-      immediate: true
+    value(val) {
+      try {
+        if (this.instance) {
+          this.update(val);
+        }
+      } catch (e) {}
     },
-    readOnlyMode: {
-      handler: this.handlerReadOnlyMode(val),
-      immediate: true
+    readOnlyMode(val) {
+      this.instance.setReadOnly(val);
     }
   },
   mounted() {
@@ -135,16 +137,6 @@ export default {
           this.onChange();
         });
       }
-    },
-    handlerUpdate(val) {
-      try {
-        if (this.instance) {
-          this.update(val);
-        }
-      } catch (e) {}
-    },
-    handlerReadOnlyMode(val) {
-      this.instance.setReadOnly(val);
     }
   }
 };

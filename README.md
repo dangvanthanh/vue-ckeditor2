@@ -68,13 +68,14 @@ export default {
 
 ### Props
 
-| Name                    | Type       | Description                                                              |
-| ----------------------- | ---------- | ------------------------------------------------------------------------ |
-| `name`                  | `String`   | Name of instance ckedior. **Default: editor-1**                          |
-| `id`                    | `String`   | Id of instance ckedior. **Default: editor-1**                            |
-| `types`                 | `String`   | Types of ckedior. **Default: classic**                                   |
-| `config`                | `Object`   | All configuration of ckeditor. **Default: {}**                           |
-| `instanceReadyCallback` | `Function` | Optional function that will be attached to CKEditor instanceReady event. |
+| Name                    | Type       | Description                                                                  |
+| ----------------------- | ---------- | ---------------------------------------------------------------------------- |
+| `name`                  | `String`   | Name of instance ckedior. **Default: editor- **                              |
+| `id`                    | `String`   | Id of instance ckedior. **Default: editor-1**                                |
+| `types`                 | `String`   | Types of ckedior. **Default: classic**                                       |
+| `config`                | `Object`   | All configuration of ckeditor. **Default: {}**                               |
+| `instanceReadyCallback` | `Function` | Optional function that will be attached to CKEditor instanceReady event.     |
+| `readOnlyMode`          | `Boolean`  | Option setReadOnly editor initializes in the proper mode. **Default: false** |
 
 ## Build Setup
 
@@ -97,6 +98,7 @@ Thanks to:
 - [rlfscin](https://github.com/rlfscin)
 - [Renato Souza](https://github.com/renatosistemasvc)
 - [Fernando Morgenstern](https://github.com/fernandomm)
+- [Christoph-Wagner](https://github.com/Christoph-Wagner)
 
 ## License
 

@@ -71,13 +71,15 @@
       }
     },
     watch: {
-      value: {
-        handler: undefined.handlerUpdate(val),
-        immediate: true
+      value: function value(val) {
+        try {
+          if (this.instance) {
+            this.update(val);
+          }
+        } catch (e) {}
       },
-      readOnlyMode: {
-        handler: undefined.handlerReadOnlyMode(val),
-        immediate: true
+      readOnlyMode: function readOnlyMode(val) {
+        this.instance.setReadOnly(val);
       }
     },
     mounted: function mounted() {
@@ -158,16 +160,6 @@
             _this2.onChange();
           });
         }
-      },
-      handlerUpdate: function handlerUpdate(val) {
-        try {
-          if (this.instance) {
-            this.update(val);
-          }
-        } catch (e) {}
-      },
-      handlerReadOnlyMode: function handlerReadOnlyMode(val) {
-        this.instance.setReadOnly(val);
       }
     }
   };
