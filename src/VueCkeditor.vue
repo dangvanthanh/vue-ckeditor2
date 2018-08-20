@@ -5,7 +5,8 @@
       :id="id"
       :value="value"
       :types="types"
-      :config="config">
+      :config="config"
+      :disabled="readOnlyMode">
     </textarea>
   </div>
 </template>
@@ -37,7 +38,11 @@ export default {
     },
     instanceReadyCallback: {
       type: Function
-    }
+    },
+    readOnlyMode: {
+      type: Boolean,
+      default: () => false,
+    },
   },
   data() {
     return {
@@ -57,6 +62,9 @@ export default {
           this.update(val);
         }
       } catch (e) {}
+    },
+    readOnlyMode(val) {
+      this.instance.setReadOnly(val);
     }
   },
   mounted() {
