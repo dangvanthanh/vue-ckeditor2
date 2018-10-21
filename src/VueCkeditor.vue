@@ -46,7 +46,6 @@ export default {
   },
   data() {
     return {
-      destroyed: false,
       instanceValue: ''
     };
   },
@@ -109,11 +108,11 @@ export default {
     },
     destroy() {
       try {
-        if (!this.destroyed) {
-          this.instance.focusManager.blur(true);
-          this.instance.removeAllListeners();
-          this.instance.destroy();
-          this.destroyed = true;
+        let editor = window['CKEDITOR'];
+        if (editor.instances) {
+          for (let instance in editor.instances) {
+            instance.destroy();
+          }
         }
       } catch (e) {}
     },

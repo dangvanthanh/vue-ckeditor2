@@ -61,7 +61,6 @@
     },
     data: function data() {
       return {
-        destroyed: false,
         instanceValue: ''
       };
     },
@@ -129,11 +128,12 @@
       },
       destroy: function destroy() {
         try {
-          if (!this.destroyed) {
-            this.instance.focusManager.blur(true);
-            this.instance.removeAllListeners();
-            this.instance.destroy();
-            this.destroyed = true;
+          var editor = window['CKEDITOR'];
+
+          if (editor.instances) {
+            for (var instance in editor.instances) {
+              instance.destroy();
+            }
           }
         } catch (e) {}
       },
