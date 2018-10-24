@@ -34,7 +34,15 @@ Then in your component:
 ```vue
 <template>
   <div>
-    <vue-ckeditor v-model="content" :config="config" @blur="onBlur($event)" @focus="onFocus($event)" />
+    <vue-ckeditor 
+      v-model="content" 
+      :config="config" 
+      @blur="onBlur($event)" 
+      @focus="onFocus($event)"
+      @contentDom="onContentDom($event)"
+      @dialogDefinition="onDialogDefinition($event)"
+      @fileUploadRequest="onFileUploadRequest($event)"
+      @fileUploadResponse="onFileUploadResponse($event)" />
   </div>
 </template>
 
@@ -55,11 +63,23 @@ export default {
     };
   },
   methods: {
-    onBlur(editor) {
-      console.log(editor);
+    onBlur(evt) {
+      console.log(evt);
     },
-    onFocus(editor) {
-      console.log(editor);
+    onFocus(evt) {
+      console.log(evt);
+    },
+    onContentDom(evt) {
+      console.log(evt);
+    },
+    onDialogDefinition(evt) {
+      console.log(evt);
+    },
+    onFileUploadRequest(evt) {
+      console.log(evt);
+    },
+    onFileUploadResponse(evt) {
+      console.log(evt);
     }
   }
 };
@@ -76,6 +96,17 @@ export default {
 | `config`                | `Object`   | All configuration of ckeditor. **Default: {}**                               |
 | `instanceReadyCallback` | `Function` | Optional function that will be attached to CKEditor instanceReady event.     |
 | `readOnlyMode`          | `Boolean`  | Option setReadOnly editor initializes in the proper mode. **Default: false** |
+
+### Events
+
+| Name                 | Description                                                                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `blur`               | Fired when the editor instance loses the input focus.                                                                                                             |
+| `focus`              | Fired when the editor instance receives the input focus.                                                                                                          |
+| `contentDom`         | Event fired when the editor content (its DOM structure) is ready                                                                                                  |
+| `dialogDefinition`   | Event fired when a dialog definition is about to be used to create a dialog into an editor instance                                                               |
+| `fileUploadRequest`  | Event fired when the [file loader](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_fileTools_fileLoader.html) should send XHR                             |
+| `fileUploadResponse` | Event fired when the [file loader](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_fileTools_fileLoader.html) response is received and needs to be parsed |
 
 ## Build Setup
 

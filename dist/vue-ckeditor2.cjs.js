@@ -98,16 +98,39 @@ var script = {
         this.instance.setData(this.value);
         this.instance.on('instanceReady', function() {
           _this.instance.setData(_this.value);
-        });
-        this.instance.on('change', this.onChange);
-        this.instance.on('mode', this.onMode);
-        this.instance.on('blur', this.onBlur);
-        this.instance.on('focus', this.onFocus);
-        this.instance.on('fileUploadResponse', function() {
+        }); // Ckeditor change event
+
+        this.instance.on('change', this.onChange); // Ckeditor mode html or source
+
+        this.instance.on('mode', this.onMode); // Ckeditor blur event
+
+        this.instance.on('blur', function(evt) {
+          _this.$emit('blur', evt);
+        }); // Ckeditor focus event
+
+        this.instance.on('focus', function(evt) {
+          _this.$emit('focus', evt);
+        }); // Ckeditor contentDom event
+
+        this.instance.on('contentDom', function(evt) {
+          _this.$emit('contentDom', evt);
+        }); // Ckeditor dialog definition event
+
+        this.instance.on('dialogDefinition', function(evt) {
+          _this.$emit('dialogDefinition', evt);
+        }); // Ckeditor file upload request event
+
+        this.instance.on('fileUploadRequest', function(evt) {
+          _this.$emit('fileUploadRequest', evt);
+        }); // Ckditor file upload response event
+
+        this.instance.on('fileUploadResponse', function(evt) {
           setTimeout(function() {
             _this.onChange();
           }, 0);
-        });
+
+          _this.$emit('fileUploadResponse', evt);
+        }); // Listen for instanceReady event
 
         if (typeof this.instanceReadyCallback !== 'undefined') {
           this.instance.on('instanceReady', this.instanceReadyCallback);
@@ -132,20 +155,6 @@ var script = {
         }
       } catch (e) {}
     },
-    onChange: function onChange() {
-      var html = this.instance.getData();
-
-      if (html !== this.value) {
-        this.$emit('input', html);
-        this.instanceValue = html;
-      }
-    },
-    onBlur: function onBlur() {
-      this.$emit('blur', this.instance);
-    },
-    onFocus: function onFocus() {
-      this.$emit('focus', this.instance);
-    },
     onMode: function onMode() {
       var _this2 = this;
 
@@ -154,6 +163,14 @@ var script = {
         editable.attachListener(editable, 'input', function() {
           _this2.onChange();
         });
+      }
+    },
+    onChange: function onChange() {
+      var html = this.instance.getData();
+
+      if (html !== this.value) {
+        this.$emit('input', html);
+        this.instanceValue = html;
       }
     }
   }

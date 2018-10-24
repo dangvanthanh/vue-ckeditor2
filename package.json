@@ -1,6 +1,6 @@
 {
   "name": "vue-ckeditor2",
-  "version": "2.0.10",
+  "version": "2.1.0",
   "description": "Ckeditor 4 using with Vue.js",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "main": "dist/vue-ckeditor2.cjs.js",

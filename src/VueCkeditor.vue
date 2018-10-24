@@ -82,20 +82,53 @@ export default {
         } else {
           CKEDITOR.replace(this.id, this.config);
         }
+
         this.instance.setData(this.value);
+
         this.instance.on('instanceReady', () => {
           this.instance.setData(this.value);
         });
+
+        // Ckeditor change event
         this.instance.on('change', this.onChange);
+
+        // Ckeditor mode html or source
         this.instance.on('mode', this.onMode);
-        this.instance.on('blur', this.onBlur);
-        this.instance.on('focus', this.onFocus);
-        this.instance.on('fileUploadResponse', () => {
+
+        // Ckeditor blur event
+        this.instance.on('blur', evt => {
+          this.$emit('blur', evt);
+        });
+
+        // Ckeditor focus event
+        this.instance.on('focus', evt => {
+          this.$emit('focus', evt);
+        });
+
+        // Ckeditor contentDom event
+        this.instance.on('contentDom', evt => {
+          this.$emit('contentDom', evt);
+        });
+
+        // Ckeditor dialog definition event
+        this.instance.on('dialogDefinition', evt => {
+          this.$emit('dialogDefinition', evt);
+        });
+
+        // Ckeditor file upload request event
+        this.instance.on('fileUploadRequest', evt => {
+          this.$emit('fileUploadRequest', evt);
+        });
+
+        // Ckditor file upload response event
+        this.instance.on('fileUploadResponse', evt => {
           setTimeout(() => {
             this.onChange();
           }, 0);
+          this.$emit('fileUploadResponse', evt);
         });
 
+        // Listen for instanceReady event
         if (typeof this.instanceReadyCallback !== 'undefined') {
           this.instance.on('instanceReady', this.instanceReadyCallback);
         }
@@ -116,25 +149,19 @@ export default {
         }
       } catch (e) {}
     },
-    onChange() {
-      let html = this.instance.getData();
-      if (html !== this.value) {
-        this.$emit('input', html);
-        this.instanceValue = html;
-      }
-    },
-    onBlur() {
-      this.$emit('blur', this.instance);
-    },
-    onFocus() {
-      this.$emit('focus', this.instance);
-    },
     onMode() {
       if (this.instance.mode === 'source') {
         let editable = this.instance.editable();
         editable.attachListener(editable, 'input', () => {
           this.onChange();
         });
+      }
+    },
+    onChange() {
+      let html = this.instance.getData();
+      if (html !== this.value) {
+        this.$emit('input', html);
+        this.instanceValue = html;
       }
     }
   }
