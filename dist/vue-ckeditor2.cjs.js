@@ -116,7 +116,7 @@ var script = {
           _this.$emit('contentDom', evt);
         }); // Ckeditor dialog definition event
 
-        this.instance.on('dialogDefinition', function(evt) {
+        CKEDITOR.on('dialogDefinition', function(evt) {
           _this.$emit('dialogDefinition', evt);
         }); // Ckeditor file upload request event
 

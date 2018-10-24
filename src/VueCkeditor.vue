@@ -111,7 +111,7 @@ export default {
         });
 
         // Ckeditor dialog definition event
-        this.instance.on('dialogDefinition', evt => {
+        CKEDITOR.on('dialogDefinition', evt => {
           this.$emit('dialogDefinition', evt);
         });
 
