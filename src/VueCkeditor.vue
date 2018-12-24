@@ -6,7 +6,8 @@
       :value="value"
       :types="types"
       :config="config"
-      :disabled="readOnlyMode">
+      :disabled="readOnlyMode"
+    >
     </textarea>
   </div>
 </template>
@@ -69,9 +70,6 @@ export default {
   mounted() {
     this.create();
   },
-  beforeDestroy() {
-    this.destroy();
-  },
   methods: {
     create() {
       if (typeof CKEDITOR === 'undefined') {
@@ -132,6 +130,11 @@ export default {
         if (typeof this.instanceReadyCallback !== 'undefined') {
           this.instance.on('instanceReady', this.instanceReadyCallback);
         }
+
+        // Registering the beforeDestroyed hook right after creating the instance
+        this.$once('hook:beforeDestroy', () => {
+          this.destroy();
+        });
       }
     },
     update(val) {

@@ -11,8 +11,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,json,vue}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "peerDependencies": {
     "vue": ">= 2",
@@ -31,8 +37,8 @@
   "devDependencies": {
     "bili": "^3.4.2",
     "husky": "^1.2.1",
+    "lint-staged": "8.1.0",
     "prettier": "1.15.3",
-    "pretty-quick": "^1.8.0",
     "rollup-plugin-vue": "^4.3.2",
     "vue-template-compiler": "^2.5.21"
   }
