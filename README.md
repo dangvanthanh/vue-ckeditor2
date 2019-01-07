@@ -2,6 +2,6 @@
 
 ## Todo
 
-[] Fix bug issues
-[] Integrate test
+* [] Fix bug issues
+* [] Integrate test
 
