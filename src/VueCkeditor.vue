@@ -145,10 +145,8 @@ export default {
     destroy() {
       try {
         let editor = window['CKEDITOR'];
-        if (editor.instances) {
-          for (let instance in editor.instances) {
-            instance.destroy();
-          }
+        if (editor.instances && editor.instances[this.id]) {
+          editor.instances[this.id].destroy();
         }
       } catch (e) {}
     },
