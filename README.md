@@ -130,6 +130,7 @@ Thanks to:
 - [Renato Souza](https://github.com/renatosistemasvc)
 - [Fernando Morgenstern](https://github.com/fernandomm)
 - [Christoph-Wagner](https://github.com/Christoph-Wagner)
+- [Patrick Davey](https://github.com/patrickdavey)
 
 ## License
 
