@@ -1,13 +1,13 @@
 {
   "name": "vue-ckeditor2",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Ckeditor 4 using with Vue.js",
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "main": "dist/vue-ckeditor2.cjs.js",
-  "module": "dist/vue-ckeditor2.es.js",
-  "unpkg": "dist/vue-ckeditor2.js",
+  "module": "dist/vue-ckeditor2.esm.js",
+  "unpkg": "dist/vue-ckeditor2.umd.js",
   "scripts": {
-    "build": "bili src/index.js --plugin vue --format umd,cjs,es --exports named --module-name VueCkeditor"
+    "build": "bili src/index.js"
   },
   "husky": {
     "hooks": {
@@ -35,11 +35,11 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bili": "^3.4.2",
-    "husky": "^1.2.1",
-    "lint-staged": "8.1.0",
-    "prettier": "1.15.3",
-    "rollup-plugin-vue": "^4.3.2",
-    "vue-template-compiler": "^2.5.21"
+    "bili": "4.4.0",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.5",
+    "prettier": "1.16.4",
+    "rollup-plugin-vue": "4.7.2",
+    "vue-template-compiler": "2.6.8"
   }
 }
