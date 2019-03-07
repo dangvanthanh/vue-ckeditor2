@@ -1,11 +1,5 @@
 'use strict';
-function _interopDefault(t) {
-  return t && 'object' == typeof t && 'default' in t ? t.default : t;
-}
-var __vue_normalize__ = _interopDefault(
-    require('vue-runtime-helpers/dist/normalize-component.js')
-  ),
-  inc = new Date().getTime(),
+var inc = new Date().getTime(),
   script = {
     name: 'VueCkeditor',
     props: {
@@ -123,6 +117,54 @@ var __vue_normalize__ = _interopDefault(
       }
     }
   };
+function normalizeComponent(t, e, n, i, o, s, a, c, r, d) {
+  'boolean' != typeof a && ((r = c), (c = a), (a = !1));
+  var u,
+    _ = 'function' == typeof n ? n.options : n;
+  if (
+    (t &&
+      t.render &&
+      ((_.render = t.render),
+      (_.staticRenderFns = t.staticRenderFns),
+      (_._compiled = !0),
+      o && (_.functional = !0)),
+    i && (_._scopeId = i),
+    s
+      ? ((u = function(t) {
+          (t =
+            t ||
+            (this.$vnode && this.$vnode.ssrContext) ||
+            (this.parent &&
+              this.parent.$vnode &&
+              this.parent.$vnode.ssrContext)) ||
+            'undefined' == typeof __VUE_SSR_CONTEXT__ ||
+            (t = __VUE_SSR_CONTEXT__),
+            e && e.call(this, r(t)),
+            t && t._registeredComponents && t._registeredComponents.add(s);
+        }),
+        (_._ssrRegister = u))
+      : e &&
+        (u = a
+          ? function() {
+              e.call(this, d(this.$root.$options.shadowRoot));
+            }
+          : function(t) {
+              e.call(this, c(t));
+            }),
+    u)
+  )
+    if (_.functional) {
+      var l = _.render;
+      _.render = function(t, e) {
+        return u.call(e), l(t, e);
+      };
+    } else {
+      var h = _.beforeCreate;
+      _.beforeCreate = h ? [].concat(h, u) : [u];
+    }
+  return n;
+}
+var normalizeComponent_1 = normalizeComponent;
 const __vue_script__ = script;
 var __vue_render__ = function() {
     var t = this.$createElement,
@@ -145,7 +187,7 @@ const __vue_inject_styles__ = void 0,
   __vue_scope_id__ = void 0,
   __vue_module_identifier__ = void 0,
   __vue_is_functional_template__ = !1;
-var VueCkeditor = __vue_normalize__(
+var VueCkeditor = normalizeComponent_1(
   { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
   void 0,
   __vue_script__,

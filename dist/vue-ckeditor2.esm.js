@@ -1,6 +1,51 @@
-import t from 'vue-runtime-helpers/dist/normalize-component.js';
-var n = new Date().getTime();
-export default t(
+var t = new Date().getTime();
+export default (function(t, n, e, i, s, o, a, c, r, d) {
+  'boolean' != typeof a && ((r = c), (c = a), (a = !1));
+  var u,
+    h = 'function' == typeof e ? e.options : e;
+  if (
+    (t &&
+      t.render &&
+      ((h.render = t.render),
+      (h.staticRenderFns = t.staticRenderFns),
+      (h._compiled = !0),
+      s && (h.functional = !0)),
+    i && (h._scopeId = i),
+    o
+      ? ((u = function(t) {
+          (t =
+            t ||
+            (this.$vnode && this.$vnode.ssrContext) ||
+            (this.parent &&
+              this.parent.$vnode &&
+              this.parent.$vnode.ssrContext)) ||
+            'undefined' == typeof __VUE_SSR_CONTEXT__ ||
+            (t = __VUE_SSR_CONTEXT__),
+            n && n.call(this, r(t)),
+            t && t._registeredComponents && t._registeredComponents.add(o);
+        }),
+        (h._ssrRegister = u))
+      : n &&
+        (u = a
+          ? function() {
+              n.call(this, d(this.$root.$options.shadowRoot));
+            }
+          : function(t) {
+              n.call(this, c(t));
+            }),
+    u)
+  )
+    if (h.functional) {
+      var f = h.render;
+      h.render = function(t, n) {
+        return u.call(n), f(t, n);
+      };
+    } else {
+      var l = h.beforeCreate;
+      h.beforeCreate = l ? [].concat(l, u) : [u];
+    }
+  return e;
+})(
   {
     render: function() {
       var t = this.$createElement,
@@ -27,14 +72,14 @@ export default t(
       name: {
         type: String,
         default: function() {
-          return 'editor-'.concat(++n);
+          return 'editor-'.concat(++t);
         }
       },
       value: { type: String },
       id: {
         type: String,
         default: function() {
-          return 'editor-'.concat(n);
+          return 'editor-'.concat(t);
         }
       },
       types: {
