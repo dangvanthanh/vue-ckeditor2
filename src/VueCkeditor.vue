@@ -140,6 +140,7 @@ export default {
     update(val) {
       if (this.instanceValue !== val) {
         this.instance.setData(val, { internal: false });
+        this.instanceValue = val;
       }
     },
     destroy() {
