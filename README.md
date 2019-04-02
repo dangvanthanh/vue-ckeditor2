@@ -131,6 +131,7 @@ Thanks to:
 - [Fernando Morgenstern](https://github.com/fernandomm)
 - [Christoph-Wagner](https://github.com/Christoph-Wagner)
 - [Patrick Davey](https://github.com/patrickdavey)
+- [Michali Sarris](https://github.com/msarris)
 
 ## License
 
