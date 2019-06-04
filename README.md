@@ -116,22 +116,7 @@ You can use [vue-cli](https://github.com/vuejs/vue-cli) with [vue-rollup-boilerp
 
 - [Dang Van Thanh](https://github.com/dangvanthanh)
 
-Thanks to:
-
-- [Eduárd Moldován](https://github.com/edimoldovan)
-- [Dominique FERET](https://github.com/DominiqueFERET)
-- [comfuture](https://github.com/comfuture)
-- [旺旺](https://github.com/chengpan168)
-- [Tony Yip](https://github.com/tonyhhyip)
-- [Nedyalko Dyakov](https://github.com/ndyakov)
-- [Bryan Miller](https://github.com/bryanjamesmiller)
-- [Jeff Omiecinski](https://github.com/omiecinski)
-- [rlfscin](https://github.com/rlfscin)
-- [Renato Souza](https://github.com/renatosistemasvc)
-- [Fernando Morgenstern](https://github.com/fernandomm)
-- [Christoph-Wagner](https://github.com/Christoph-Wagner)
-- [Patrick Davey](https://github.com/patrickdavey)
-- [Michali Sarris](https://github.com/msarris)
+Thanks to [contributers](./CONTRIBUTING.md)
 
 ## License
 

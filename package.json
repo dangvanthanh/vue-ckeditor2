@@ -35,11 +35,11 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bili": "4.4.0",
-    "husky": "1.3.1",
-    "lint-staged": "8.1.5",
-    "prettier": "1.16.4",
-    "rollup-plugin-vue": "4.7.2",
+    "bili": "4.8.0",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
+    "prettier": "1.17.1",
+    "rollup-plugin-vue": "5.0.0",
     "vue-template-compiler": "2.6.8"
   }
 }
