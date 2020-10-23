@@ -7,7 +7,7 @@ import pkg from '../package.json';
 
 const config = Object.assign({}, base, {
   output: {
-    name: 'vue-ckeditor2',
+    name: 'vue-ckeditor',
     file: pkg.module,
     format: 'es',
   },
