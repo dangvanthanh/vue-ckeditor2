@@ -1,1 +1,334 @@
-!function(t,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(t=t||self).VueCkeditor=n()}(this,function(){"use strict";var t=(new Date).getTime();return function(t,n,e,i,o,s,a,c,r,d){"boolean"!=typeof a&&(r=c,c=a,a=!1);var u,f="function"==typeof e?e.options:e;if(t&&t.render&&(f.render=t.render,f.staticRenderFns=t.staticRenderFns,f._compiled=!0,o&&(f.functional=!0)),i&&(f._scopeId=i),s?(u=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),n&&n.call(this,r(t)),t&&t._registeredComponents&&t._registeredComponents.add(s)},f._ssrRegister=u):n&&(u=a?function(){n.call(this,d(this.$root.$options.shadowRoot))}:function(t){n.call(this,c(t))}),u)if(f.functional){var h=f.render;f.render=function(t,n){return u.call(n),h(t,n)}}else{var l=f.beforeCreate;f.beforeCreate=l?[].concat(l,u):[u]}return e}({render:function(){var t=this.$createElement,n=this._self._c||t;return n("div",{staticClass:"ckeditor"},[n("textarea",{attrs:{name:this.name,id:this.id,types:this.types,config:this.config,disabled:this.readOnlyMode},domProps:{value:this.value}})])},staticRenderFns:[]},void 0,{name:"VueCkeditor",props:{name:{type:String,default:function(){return"editor-".concat(++t)}},value:{type:String},id:{type:String,default:function(){return"editor-".concat(t)}},types:{type:String,default:function(){return"classic"}},config:{type:Object,default:function(){}},instanceReadyCallback:{type:Function},readOnlyMode:{type:Boolean,default:function(){return!1}}},data:function(){return{instanceValue:""}},computed:{instance:function(){return CKEDITOR.instances[this.id]}},watch:{value:function(t){try{this.instance&&this.update(t)}catch(t){}},readOnlyMode:function(t){this.instance.setReadOnly(t)}},mounted:function(){this.create()},methods:{create:function(){var t=this;"undefined"==typeof CKEDITOR?console.log("CKEDITOR is missing (http://ckeditor.com/)"):("inline"===this.types?CKEDITOR.inline(this.id,this.config):CKEDITOR.replace(this.id,this.config),this.instance.setData(this.value),this.instance.on("instanceReady",function(){t.instance.setData(t.value)}),this.instance.on("change",this.onChange),this.instance.on("mode",this.onMode),this.instance.on("blur",function(n){t.$emit("blur",n)}),this.instance.on("focus",function(n){t.$emit("focus",n)}),this.instance.on("contentDom",function(n){t.$emit("contentDom",n)}),CKEDITOR.on("dialogDefinition",function(n){t.$emit("dialogDefinition",n)}),this.instance.on("fileUploadRequest",function(n){t.$emit("fileUploadRequest",n)}),this.instance.on("fileUploadResponse",function(n){setTimeout(function(){t.onChange()},0),t.$emit("fileUploadResponse",n)}),void 0!==this.instanceReadyCallback&&this.instance.on("instanceReady",this.instanceReadyCallback),this.$once("hook:beforeDestroy",function(){t.destroy()}))},update:function(t){this.instanceValue!==t&&(this.instance.setData(t,{internal:!1}),this.instanceValue=t)},destroy:function(){try{var t=window.CKEDITOR;t.instances&&t.instances[this.id]&&t.instances[this.id].destroy()}catch(t){}},onMode:function(){var t=this;if("source"===this.instance.mode){var n=this.instance.editable();n.attachListener(n,"input",function(){t.onChange()})}},onChange:function(){var t=this.instance.getData();t!==this.value&&(this.$emit("input",t),this.instanceValue=t)}}},void 0,!1,void 0,void 0,void 0)});
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['vue-ckeditor2'] = {}));
+}(this, (function (exports) { 'use strict';
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+
+  let inc = new Date().getTime();
+
+  var script = {
+    name: 'VueCkeditor',
+    props: {
+      name: {
+        type: String,
+        default: () => `editor-${++inc}`
+      },
+      value: {
+        type: String
+      },
+      id: {
+        type: String,
+        default: () => `editor-${inc}`
+      },
+      types: {
+        type: String,
+        default: () => `classic`
+      },
+      config: {
+        type: Object,
+        default: () => {}
+      },
+      instanceReadyCallback: {
+        type: Function
+      },
+      readOnlyMode: {
+        type: Boolean,
+        default: () => false
+      }
+    },
+    data() {
+      return {
+        instanceValue: ''
+      };
+    },
+    computed: {
+      instance() {
+        return CKEDITOR.instances[this.id];
+      }
+    },
+    watch: {
+      value(val) {
+        try {
+          if (this.instance) {
+            this.update(val);
+          }
+        } catch (e) {}
+      },
+      readOnlyMode(val) {
+        this.instance.setReadOnly(val);
+      }
+    },
+    mounted() {
+      this.create();
+    },
+    methods: {
+      create() {
+        if (typeof CKEDITOR === 'undefined') {
+          console.log('CKEDITOR is missing (http://ckeditor.com/)');
+        } else {
+          if (this.types === 'inline') {
+            CKEDITOR.inline(this.id, this.config);
+          } else {
+            CKEDITOR.replace(this.id, this.config);
+          }
+
+          this.instance.setData(this.value);
+
+          this.instance.on('instanceReady', () => {
+            this.instance.setData(this.value);
+          });
+
+          // Ckeditor change event
+          this.instance.on('change', this.onChange);
+
+          // Ckeditor mode html or source
+          this.instance.on('mode', this.onMode);
+
+          // Ckeditor blur event
+          this.instance.on('blur', evt => {
+            this.$emit('blur', evt);
+          });
+
+          // Ckeditor focus event
+          this.instance.on('focus', evt => {
+            this.$emit('focus', evt);
+          });
+
+          // Ckeditor contentDom event
+          this.instance.on('contentDom', evt => {
+            this.$emit('contentDom', evt);
+          });
+
+          // Ckeditor dialog definition event
+          CKEDITOR.on('dialogDefinition', evt => {
+            this.$emit('dialogDefinition', evt);
+          });
+
+          // Ckeditor file upload request event
+          this.instance.on('fileUploadRequest', evt => {
+            this.$emit('fileUploadRequest', evt);
+          });
+
+          // Ckditor file upload response event
+          this.instance.on('fileUploadResponse', evt => {
+            setTimeout(() => {
+              this.onChange();
+            }, 0);
+            this.$emit('fileUploadResponse', evt);
+          });
+
+          // Listen for instanceReady event
+          if (typeof this.instanceReadyCallback !== 'undefined') {
+            this.instance.on('instanceReady', this.instanceReadyCallback);
+          }
+
+          // Registering the beforeDestroyed hook right after creating the instance
+          this.$once('hook:beforeDestroy', () => {
+            this.destroy();
+          });
+        }
+      },
+      update(val) {
+        if (this.instanceValue !== val) {
+          this.instance.setData(val, { internal: false });
+          this.instanceValue = val;
+        }
+      },
+      destroy() {
+        try {
+          let editor = window['CKEDITOR'];
+          if (editor.instances && editor.instances[this.id]) {
+            editor.instances[this.id].destroy();
+          }
+        } catch (e) {}
+      },
+      onMode() {
+        if (this.instance.mode === 'source') {
+          let editable = this.instance.editable();
+          editable.attachListener(editable, 'input', () => {
+            this.onChange();
+          });
+        }
+      },
+      onChange() {
+        let html = this.instance.getData();
+        if (html !== this.value) {
+          this.$emit('input', html);
+          this.instanceValue = html;
+        }
+      }
+    }
+  };
+
+  function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+      if (typeof shadowMode !== 'boolean') {
+          createInjectorSSR = createInjector;
+          createInjector = shadowMode;
+          shadowMode = false;
+      }
+      // Vue.extend constructor export interop.
+      const options = typeof script === 'function' ? script.options : script;
+      // render functions
+      if (template && template.render) {
+          options.render = template.render;
+          options.staticRenderFns = template.staticRenderFns;
+          options._compiled = true;
+          // functional template
+          if (isFunctionalTemplate) {
+              options.functional = true;
+          }
+      }
+      // scopedId
+      if (scopeId) {
+          options._scopeId = scopeId;
+      }
+      let hook;
+      if (moduleIdentifier) {
+          // server build
+          hook = function (context) {
+              // 2.3 injection
+              context =
+                  context || // cached call
+                      (this.$vnode && this.$vnode.ssrContext) || // stateful
+                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext); // functional
+              // 2.2 with runInNewContext: true
+              if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+                  context = __VUE_SSR_CONTEXT__;
+              }
+              // inject component styles
+              if (style) {
+                  style.call(this, createInjectorSSR(context));
+              }
+              // register component module identifier for async chunk inference
+              if (context && context._registeredComponents) {
+                  context._registeredComponents.add(moduleIdentifier);
+              }
+          };
+          // used by ssr in case component is cached and beforeCreate
+          // never gets called
+          options._ssrRegister = hook;
+      }
+      else if (style) {
+          hook = shadowMode
+              ? function (context) {
+                  style.call(this, createInjectorShadow(context, this.$root.$options.shadowRoot));
+              }
+              : function (context) {
+                  style.call(this, createInjector(context));
+              };
+      }
+      if (hook) {
+          if (options.functional) {
+              // register for functional component in vue file
+              const originalRender = options.render;
+              options.render = function renderWithStyleInjection(h, context) {
+                  hook.call(context);
+                  return originalRender(h, context);
+              };
+          }
+          else {
+              // inject component registration as beforeCreate hook
+              const existing = options.beforeCreate;
+              options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+          }
+      }
+      return script;
+  }
+
+  /* script */
+  const __vue_script__ = script;
+
+  /* template */
+  var __vue_render__ = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "ckeditor" }, [
+      _c("textarea", {
+        attrs: {
+          name: _vm.name,
+          id: _vm.id,
+          types: _vm.types,
+          config: _vm.config,
+          disabled: _vm.readOnlyMode
+        },
+        domProps: { value: _vm.value }
+      })
+    ])
+  };
+  var __vue_staticRenderFns__ = [];
+  __vue_render__._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__ = undefined;
+    /* scoped */
+    const __vue_scope_id__ = undefined;
+    /* module identifier */
+    const __vue_module_identifier__ = undefined;
+    /* functional template */
+    const __vue_is_functional_template__ = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__ = /*#__PURE__*/normalizeComponent(
+      { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+      __vue_inject_styles__,
+      __vue_script__,
+      __vue_scope_id__,
+      __vue_is_functional_template__,
+      __vue_module_identifier__,
+      false,
+      undefined,
+      undefined,
+      undefined
+    );
+
+  // Declare install function excuted by Vue.use()
+  function install(Vue) {
+    if (install.installed) {
+      return;
+    }
+    install.installed = true;
+    Vue.component('VueCkeditor', __vue_component__);
+  }
+
+  const plugin = { install };
+
+  let GlobalVue = null;
+
+  if (typeof window !== 'undefined') {
+    GlobalVue = window.Vue;
+  } else if (typeof global !== 'undefined') {
+    GlobalVue = global.Vue;
+  }
+
+  if (GlobalVue) {
+    GlobalVue.use(plugin);
+  }
+
+  exports.default = plugin;
+  exports.install = install;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

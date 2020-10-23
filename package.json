@@ -1,14 +1,32 @@
 {
   "name": "vue-ckeditor2",
-  "version": "2.1.5",
+  "version": "3.0.0",
   "description": "Ckeditor 4 using with Vue.js",
-  "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
-  "main": "dist/vue-ckeditor2.cjs.js",
+  "main": "dist/vue-ckeditor2.umd.js",
   "module": "dist/vue-ckeditor2.esm.js",
-  "unpkg": "dist/vue-ckeditor2.umd.js",
+  "unpkg": "dist/vue-ckeditor2.min.js",
   "scripts": {
-    "build": "bili src/index.js --bundle-node-modules"
+    "build": "npm run build:browsers && npm run build:es && npm run build:umd",
+    "build:browsers": "rollup -c build/rollup.config.browsers.js",
+    "build:es": "rollup -c build/rollup.config.es.js",
+    "build:umd": "rollup -c build/rollup.config.umd.js",
+    "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangvanthanh/vue-ckeditor2.git"
+  },
+  "keywords": [
+    "vue",
+    "ckeditor",
+    "vue-ckeditor"
+  ],
+  "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dangvanthanh/vue-ckeditor2/issues"
+  },
+  "homepage": "https://github.com/dangvanthanh/vue-ckeditor2#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -20,26 +38,31 @@
       "git add"
     ]
   },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@testing-library/dom": "^7.24.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/vue": "^5.0.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.3.0",
+    "clean-css": "^4.2.3",
+    "esbuild": "^0.7.4",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2",
+    "rollup": "^2.28.1",
+    "rollup-plugin-css-only": "^2.1.0",
+    "rollup-plugin-esbuild": "^2.5.0",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-vue": "^5.1.9",
+    "vue-jest": "^3.0.7",
+    "vue-template-compiler": "^2.6.12"
+  },
   "peerDependencies": {
     "vue": ">= 2",
     "ckeditor": ">= 4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dangvanthanh/vue-ckeditor2.git"
-  },
-  "keywords": [
-    "vue",
-    "ckeditor",
-    "vue-ckeditor"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "bili": "4.8.0",
-    "husky": "2.3.0",
-    "lint-staged": "8.1.7",
-    "prettier": "1.17.1",
-    "rollup-plugin-vue": "5.0.0",
-    "vue-template-compiler": "2.6.8"
   }
 }
