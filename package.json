@@ -6,6 +6,7 @@
   "module": "dist/vue-ckeditor2.esm.js",
   "unpkg": "dist/vue-ckeditor2.min.js",
   "scripts": {
+    "dev": "parcel index.html",
     "build": "npm run build:browsers && npm run build:es && npm run build:umd",
     "build:browsers": "rollup -c build/rollup.config.browsers.js",
     "build:es": "rollup -c build/rollup.config.es.js",
@@ -39,30 +40,30 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-env": "^7.12.1",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@testing-library/dom": "^7.24.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/vue": "^5.0.4",
+    "@testing-library/dom": "^7.26.3",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/vue": "^5.1.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^26.3.0",
+    "babel-jest": "^26.6.1",
     "clean-css": "^4.2.3",
-    "esbuild": "^0.7.4",
+    "esbuild": "^0.7.19",
     "husky": "^4.3.0",
-    "jest": "^26.4.2",
+    "jest": "^26.6.1",
     "lint-staged": "^10.4.2",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.1.2",
-    "rollup": "^2.28.1",
+    "rollup": "^2.32.1",
     "rollup-plugin-css-only": "^2.1.0",
-    "rollup-plugin-esbuild": "^2.5.0",
+    "rollup-plugin-esbuild": "^2.5.2",
     "rollup-plugin-filesize": "^9.0.2",
     "rollup-plugin-vue": "^5.1.9",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.12"
   },
-  "peerDependencies": {
-    "vue": ">= 2",
-    "ckeditor": ">= 4"
+  "dependencies": {
+    "vue": "^2.6.14"
   }
 }
